@@ -1,0 +1,28 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: seashell;
+  color: black;
+  font-family: 'Do Hyeon', sans-serif;
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
+  &__message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .home {
+    img {
+      width: 300px;
+    }
+  }
+}
