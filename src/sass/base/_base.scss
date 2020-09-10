@@ -31,6 +31,19 @@ body {
     }
 }
 
+a {
+    text-decoration: none;
+    &:link {
+        color: $color-tertiary-dark;
+    }
+    &:visited {
+        color: $color-tertiary-dark;
+    }
+    &:hover {
+        color: $color-tertiary-light;
+    }
+}
+
 ::selection {
     background-color: $color-primary;
     color: $color-white;
