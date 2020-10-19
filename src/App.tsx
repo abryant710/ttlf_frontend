@@ -1,17 +1,29 @@
 import React from 'react';
-import './sass/main.sass';
-import { links } from './config/links';
+import {
+  BrowserRouter as Router,
+  Route,
+  // RouteComponentProps
+} from 'react-router-dom';
 
+import Home from './pages/Home';
+import TopNav from './components/nav/TopNav';
+import Footer from './components/nav/Footer';
+import './sass/main.sass';
+
+// type TParams = { id: string };
+
+// function Product({ match }: RouteComponentProps<TParams>) {
+//   return <h2>This is a page for product with ID: {match.params.id} </h2>;
+// }
+ 
 function App() {
   return (
-    <div className="home">
-      <h1 className="home__title">Trip the Light Fantastic</h1>
-      <h5 className="home__message">The website is currently under construction and we will have more content soon!</h5>
-      <img className="home__image" src="images/ttlf_0001.jpg" alt="TTFL" />
-      <h3 className="home__link">
-        <a href={links.facebook} className="fb-link">Check out our Facebook page</a>
-      </h3>
-    </div>
+    <Router>
+      <TopNav />
+      <Route path="/" exact component={Home} />
+      <Route path="/home" exact component={Home} />
+      <Footer />
+    </Router>
   );
 }
 

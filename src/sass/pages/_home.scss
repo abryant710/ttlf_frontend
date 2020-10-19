@@ -7,7 +7,6 @@
   min-width: 100vw;
   background-color: seashell;
   color: black;
-  font-family: 'Do Hyeon', sans-serif;
   & img {
     animation: bounce 2.5s infinite;
   }
@@ -28,7 +27,6 @@
     font-size: 2.5rem;
   }
   & h1, & h3 {
-    transition: all 0.3s;
     &:hover {
       transform: scale(1.2);
     }
