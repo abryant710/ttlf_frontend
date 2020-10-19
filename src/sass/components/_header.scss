@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+
+  &__nav {
+    height: auto;
+  }
+  &__image {
+    background-image: url(/images/solid/ttfl_backdrop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 350px;
+    width: 100%;
+  }
+}

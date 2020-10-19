@@ -3,19 +3,14 @@ import {Link} from 'react-router-dom';
 
 function TopNav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/products/1">First Product</Link>
-        </li>
-        <li>
-          <Link to="/products/2">Second Product</Link>
-        </li>
-      </ul>
-    </nav>
+    <header className="header">
+      <div className="header__burger">
+      </div>
+      <div className="header__social-icons">
+      </div>
+      <div className="header__image">
+      </div>
+    </header>
   )
 }
 

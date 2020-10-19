@@ -6,7 +6,6 @@ import i18next from "i18next";
 
 import en from "./i18n/en.json";
 
-// To add multiple languages
 i18next.init({
     interpolation: { escapeValue: false },
     lng: 'en',
