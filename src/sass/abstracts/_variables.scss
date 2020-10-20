@@ -1,13 +1,22 @@
 // COLORS
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+$color-primary: #215add;
+$color-primary-light: #436ed4;
+$color-primary-dark: #0847da;
+$color-primary-2: #485b88;
+$color-primary-2-light: #6079b8;
+$color-primary-2-dark: #374669;
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
+$color-secondary: #b6a064;
+$color-secondary-light: #d1b872;
+$color-secondary-dark: #978552;
 
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #0846d8;
+$color-tertiary: #5e8d62;
+$color-tertiary-light: #80c085;
+$color-tertiary-dark: #476b4a;
+
+$color-quaternary: #755680;
+$color-quaternary-light: #9d73ac;
+$color-quaternary-dark: #5b4364;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
@@ -27,3 +36,8 @@ $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;
+
+// IMAGES
+$background-image-width: 3382;
+$background-image-width-small: $background-image-width / 10;
+$background-image-width-smallest: $background-image-width-small / 10;

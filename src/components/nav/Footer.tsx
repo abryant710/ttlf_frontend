@@ -1,21 +1,43 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { FaSoundcloud, FaYoutube, FaFacebook, FaTwitch } from 'react-icons/fa';
+import Tooltip from "react-simple-tooltip";
+
+import {links} from '../../config/links';
 
 function Footer() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/products/1">First Product</Link>
-        </li>
-        <li>
-          <Link to="/products/2">Second Product</Link>
-        </li>
-      </ul>
-    </nav>
+    <footer className="footer">
+      <div className="footer__icons">
+        <a target="_blank" rel="noopener noreferrer" href={links.soundcloud}>
+          <FaSoundcloud
+            color="white"
+            size="3rem"
+          />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href={links.youtube}>
+          <FaYoutube
+            color="white"
+            size="3rem"
+          />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href={links.facebook}>
+          <FaFacebook
+            color="white"
+            size="3rem"
+          />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href={links.twitch}>
+          <FaTwitch
+            color="white"
+            size="3rem"
+          />
+        </a>
+      </div>
+      <div className="footer__site-details">
+      </div>
+      <div className="footer__attribution">
+      </div>
+    </footer>
   )
 }
 

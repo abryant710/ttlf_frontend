@@ -1,22 +1,25 @@
-.splash {
+.loader {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: seashell;
+  background-color: $color-white;
   color: black;
-  & img {
-    animation: bounce 2.5s infinite;
+  &__animate {
+    animation: bounce 3s infinite;
   }
-  animation: fadeInOut ease 3s;
+  &__message {
+    font-size: 4rem;
+  }
+  animation: fadeInOut ease-in-out 3s infinite;
   opacity: 0;
   z-index: -1;
 }
 
 @media only screen and (max-width: 700px) {
-  .splash {
+  .loader {
     img {
       width: 300px;
     }

@@ -1,14 +1,11 @@
 import React from 'react';
-import {useTranslation} from "react-i18next";
 
-import Splash from '../components/Splash';
+import Loader from '../components/Loader';
 
 function Home() {
-  // const {t} = useTranslation('common');
   return (
     <div className="home">
-      <Splash imageUrl={"images/transparent/ttlf_0001.png"} />
-      {/* <h1 className="home__title">{t('home.title')}</h1> */}
+      <Loader imageUrl={"images/transparent/ttlf_0001.png"} />
     </div>
   );
 }

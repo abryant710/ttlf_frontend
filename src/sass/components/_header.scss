@@ -1,17 +1,21 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  height: 300px;
+  height: auto;
 
-  &__nav {
-    height: auto;
+  &__anchor {
+    background-color: $color-primary;
+    min-height: 4rem;
+    // position: fixed;
+    // display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
   }
   &__image {
     background-image: url(/images/solid/ttfl_backdrop.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 350px;
+    background-size: $background-image-width-small + px 100%;
+    background-repeat: repeat-x;
+    height: 100px;
     width: 100%;
+    animation: slide 30s linear infinite;
   }
 }

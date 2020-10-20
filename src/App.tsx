@@ -5,14 +5,14 @@ import {
 } from 'react-router-dom';
 
 import Home from './pages/Home';
-import TopNav from './components/nav/TopNav';
+import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import './sass/main.sass';
  
 function App() {
   return (
     <Router>
-      <TopNav />
+      <Header />
       <Route path="/" exact component={Home} />
       <Route path="/home" exact component={Home} />
       <Footer />
