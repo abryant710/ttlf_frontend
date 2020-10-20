@@ -30,14 +30,14 @@ $color-black: #000;
 
 // FONT
 $default-font-size: 1.6rem;
-
-// GRID
-$grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-vertical-small: 6rem;
-$gutter-horizontal: 6rem;
+$large-font: 2.5rem;
+$smallest-font: 1.2rem;
 
 // IMAGES
-$background-image-width: 3382;
-$background-image-width-small: $background-image-width / 10;
-$background-image-width-smallest: $background-image-width-small / 10;
+$background-image-width: 3382 + px;
+$background-image-width-small: ($background-image-width / 10) + px;
+$background-image-width-smallest: ($background-image-width-small / 10) + px;
+
+// EL HEIGHTS AND WIDTHS
+$footer-height: 100px;
+$header-anchor-height: 50px;

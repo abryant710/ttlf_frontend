@@ -1,17 +1,28 @@
 .footer {
   background-color: $color-primary;
-  min-height: 8rem;
+  min-height: $footer-height;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  &__title {
+    font-size: $large-font;
+    color: $color-white;
+  }
+  &__attribution {
+    font-size: $smallest-font;
+    color: $color-white;
+  }
   &__icons {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    & svg {
+    & a {
       margin-left: 4rem;
+    }
+    & a:first-of-type {
+      margin-left: 0rem;
     }
   }
 }

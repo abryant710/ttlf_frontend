@@ -1,4 +1,4 @@
-export const links = {
+export const externalLinks = {
   facebook: "https://www.facebook.com/TTLFharddance",
   soundcloud: "https://soundcloud.com/ttlfcanyoudefineit",
   twitch: "https://www.twitch.tv/ttlf001",

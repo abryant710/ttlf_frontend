@@ -1,17 +1,22 @@
 .loader {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - #{$footer-height} - #{$header-anchor-height});
   min-width: 100vw;
   background-color: $color-white;
   color: black;
   &__animate {
     animation: bounce 3s infinite;
   }
+  &__image {
+    width: 20rem;
+    margin-top: 2rem;
+  }
   &__message {
     font-size: 4rem;
+    margin-top: 3rem;
   }
   animation: fadeInOut ease-in-out 3s infinite;
   opacity: 0;

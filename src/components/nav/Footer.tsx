@@ -1,41 +1,22 @@
 import React from 'react';
-import { FaSoundcloud, FaYoutube, FaFacebook, FaTwitch } from 'react-icons/fa';
-import Tooltip from "react-simple-tooltip";
+import {useTranslation} from "react-i18next";
 
-import {links} from '../../config/links';
+import SocialIcons from '../../components/SocialIcons';
 
 function Footer() {
+  const {t} = useTranslation('common');
   return (
     <footer className="footer">
-      <div className="footer__icons">
-        <a target="_blank" rel="noopener noreferrer" href={links.soundcloud}>
-          <FaSoundcloud
-            color="white"
-            size="3rem"
-          />
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={links.youtube}>
-          <FaYoutube
-            color="white"
-            size="3rem"
-          />
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={links.facebook}>
-          <FaFacebook
-            color="white"
-            size="3rem"
-          />
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={links.twitch}>
-          <FaTwitch
-            color="white"
-            size="3rem"
-          />
-        </a>
+      <div className="footer__title">
+        {t('home.title')}
       </div>
-      <div className="footer__site-details">
-      </div>
+      <SocialIcons
+        className="footer__icons"
+        size="3rem"
+        color="white"
+      />
       <div className="footer__attribution">
+        &#169; {t('footer.attribution')}
       </div>
     </footer>
   )

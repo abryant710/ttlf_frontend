@@ -1,21 +1,37 @@
 .header {
   height: auto;
-
   &__anchor {
+    display: flex;
+    flex-direction: row;
     background-color: $color-primary;
-    min-height: 4rem;
-    // position: fixed;
-    // display: block;
+    min-height: $header-anchor-height;
     top: 0;
     left: 0;
     width: 100vw;
   }
   &__image {
     background-image: url(/images/solid/ttfl_backdrop.png);
-    background-size: $background-image-width-small + px 100%;
+    background-size: $background-image-width-small 100%;
     background-repeat: repeat-x;
     height: 100px;
     width: 100%;
     animation: slide 30s linear infinite;
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    padding: 12.5px;
+    justify-content: flex-start;
+    & a {
+      margin-left: 1rem;
+    }
+    & a:first-of-type {
+      margin-left: 0rem;
+    }
+  }
+  &__burger {
+    padding: 12.5px;
+    justify-content: flex-end;
+    color: $color-white;
   }
 }

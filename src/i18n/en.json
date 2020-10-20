@@ -1,8 +1,19 @@
 {
   "common": {
+    "constructionMessage": "This page is under construction",
+    "constructionMessag2": "Please visit our social media pages",
     "loading": "Loading..."
   },
   "home": {
     "title": "Trip the Light Fantastic"
+  },
+  "footer": {
+    "attribution": "Trip the Light Fantastic 2020"
+  },
+  "externalLinks": {
+    "facebook": "Facebook",
+    "soundcloud": "Soundcloud",
+    "twitch": "Twitch",
+    "youtube": "YouTube"
   }
 }
