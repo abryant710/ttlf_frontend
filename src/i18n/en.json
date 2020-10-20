@@ -1,4 +1,7 @@
 {
+  "common": {
+    "loading": "Loading..."
+  },
   "home": {
     "title": "Trip the Light Fantastic"
   }
