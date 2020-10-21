@@ -12,6 +12,7 @@
     left: 0;
     align-items: center;
     justify-content: space-evenly;
+    animation: bounceDownSoft 3s infinite;
   }
   &__title {
     font-size: $large-font;
