@@ -12,12 +12,13 @@
   }
   &__image {
     width: 30rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     animation: rotateZ360 3s infinite;
   }
   &__message {
     font-size: 4rem;
     margin-top: 3rem;
+    text-align: center;
   }
   animation: fadeInOut ease-in-out 3s infinite;
   opacity: 0;
