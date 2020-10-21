@@ -1,10 +1,18 @@
 .footer {
-  background-color: $color-primary;
-  min-height: $footer-height;
+  height: $footer-height;
+  background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-primary-light, $color-primary-light, $color-white);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: flex-end;
+  justify-content: center;
+  &__anchor {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(.75 * #{$footer-height});
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-evenly;
+  }
   &__title {
     font-size: $large-font;
     color: $color-white;

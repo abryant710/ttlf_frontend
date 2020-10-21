@@ -4,6 +4,12 @@
     "constructionMessag2": "Please visit our social media pages",
     "loading": "Loading..."
   },
+  "menu": {
+    "djProfiles": "DJ Profiles",
+    "liveSchedule": "Live Schedule",
+    "videos": "Videos",
+    "mailingList": "Mailing List"
+  },
   "home": {
     "title": "Trip the Light Fantastic"
   },

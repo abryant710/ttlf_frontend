@@ -1,10 +1,10 @@
 .header {
-  height: auto;
+  height: $header-height;
+  background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-white);
   &__anchor {
     display: flex;
     flex-direction: row;
-    background-color: $color-primary;
-    min-height: $header-anchor-height;
+    min-height: calc(.5 * #{$header-height});
     top: 0;
     left: 0;
     width: 100vw;
@@ -26,5 +26,8 @@
     padding: $header-icon-padding;
     justify-content: flex-end;
     margin-left: auto;
+  }
+  &__menu-icon {
+    z-index: 100;
   }
 }

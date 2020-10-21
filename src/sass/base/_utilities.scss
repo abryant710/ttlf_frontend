@@ -7,3 +7,18 @@
 .pointer {
   cursor: pointer;
 }
+
+.hover-rotate {
+  &:hover {
+    transition: all ease-out 1s;
+    transform: rotateY(360deg);
+  }
+}
+
+.rotateX360 {
+  animation: .6 linear .6s rotateX360;
+}
+
+.rotateY360 {
+  animation: .6 linear .6s rotateY360;
+}

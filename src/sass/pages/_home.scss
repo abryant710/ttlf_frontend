@@ -1,5 +1,5 @@
 .home {
-  min-height: calc(100vh - #{$footer-height} - #{$header-anchor-height});
+  min-height: calc(100vh - #{$footer-height} - #{$header-height});
   min-width: 100vw;
   background-color: $color-white;
 }

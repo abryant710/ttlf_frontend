@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  min-height: calc(100vh - #{$footer-height} - #{$header-anchor-height});
+  min-height: calc(100vh - #{$footer-height} - #{$header-height});
   min-width: 100vw;
   background-color: $color-white;
   color: black;
   &__animate {
-    animation: bounce 3s infinite;
+    animation: bounceDown 3s infinite;
   }
   &__image {
     width: 20rem;

@@ -17,7 +17,7 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
     <div className={className}>
       <a
         target="_blank"
-        className="center-items"
+        className="center-items hover-rotate"
         rel="noopener noreferrer"
         href={externalLinks.soundcloud}
         data-tip={t('externalLinks.soundcloud')}
@@ -25,14 +25,11 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         <FaSoundcloud
           color={color}
           size={size}
-          style={{
-            verticalAlign: 'middle',
-          }}
         />
       </a>
       <a
         target="_blank"
-        className="center-items"
+        className="center-items hover-rotate"
         rel="noopener noreferrer"
         href={externalLinks.youtube}
         data-tip={t('externalLinks.youtube')}
@@ -40,14 +37,11 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         <FaYoutube
           color={color}
           size={size}
-          style={{
-            verticalAlign: 'middle',
-          }}
         />
       </a>
       <a
         target="_blank"
-        className="center-items"
+        className="center-items hover-rotate"
         rel="noopener noreferrer"
         href={externalLinks.facebook}
         data-tip={t('externalLinks.facebook')}
@@ -55,14 +49,11 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         <FaFacebook
           color={color}
           size={size}
-          style={{
-            verticalAlign: 'middle',
-          }}
         />
       </a>
       <a
         target="_blank"
-        className="center-items"
+        className="center-items hover-rotate"
         rel="noopener noreferrer"
         href={externalLinks.twitch}
         data-tip={t('externalLinks.twitch')}
@@ -70,9 +61,6 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         <FaTwitch
           color={color}
           size={size}
-          style={{
-            verticalAlign: 'middle',
-          }}
         />
       </a>
       <ReactTooltip />

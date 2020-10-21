@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import {CgCloseR} from 'react-icons/cg';
 
+import SiteMenu from '../menus/SiteMenu';
 import SocialIcons from '../../components/SocialIcons';
 
 function Header() {
+  const [menuOpen, toggleMenu] = useState(false);
   return (
     <header className="header">
       <div className="header__anchor">
@@ -14,14 +17,26 @@ function Header() {
             color="white"
           />
         </div>
-        <div className="header__burger center-items">
-          <GiHamburgerMenu
-            className="header__burger-icon pointer"
-            size="20px"
-            color="white"
-          />
+        <div className="header__burger">
+          {!menuOpen ? (
+            <GiHamburgerMenu
+              className="header__menu-icon pointer rotateX360"
+              size="20px"
+              color="white"
+              onClick={() => toggleMenu(!menuOpen)}
+            />
+          ) : (
+            <CgCloseR
+              className="header__menu-icon pointer rotateY360"
+              size="20px"
+              color="white"
+              onClick={() => toggleMenu(!menuOpen)}
+            />
+          )}
         </div>
       </div>
+      {/* TODO: */}
+      {menuOpen && <SiteMenu />}
     </header>
   )
 }

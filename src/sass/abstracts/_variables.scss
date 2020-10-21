@@ -1,10 +1,7 @@
 // COLORS
-$color-primary: #215add;
-$color-primary-light: #436ed4;
-$color-primary-dark: #0847da;
-$color-primary-2: #485b88;
-$color-primary-2-light: #6079b8;
-$color-primary-2-dark: #374669;
+$color-primary: #755680;
+$color-primary-light: #9d73ac;
+$color-primary-dark: #5b4364;
 
 $color-secondary: #b6a064;
 $color-secondary-light: #d1b872;
@@ -14,9 +11,12 @@ $color-tertiary: #5e8d62;
 $color-tertiary-light: #80c085;
 $color-tertiary-dark: #476b4a;
 
-$color-quaternary: #755680;
-$color-quaternary-light: #9d73ac;
-$color-quaternary-dark: #5b4364;
+$color-quaternary: #215add;
+$color-quaternary-light: #436ed4;
+$color-quaternary-dark: #0847da;
+$color-quaternary-2: #485b88;
+$color-quaternary-2-light: #6079b8;
+$color-quaternary-2-dark: #374669;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
@@ -29,6 +29,8 @@ $color-white: #fff;
 $color-black: #000;
 
 // FONT
+$default-font: 'Do Hyeon', sans-serif;
+$default-font-weight: 700;
 $default-font-size: 1.6rem;
 $large-font: 2.5rem;
 $smallest-font: 1.2rem;
@@ -39,6 +41,6 @@ $background-image-width-small: ($background-image-width / 10) + px;
 $background-image-width-smallest: ($background-image-width-small / 10) + px;
 
 // EL HEIGHTS AND WIDTHS
-$footer-height: 100px;
-$header-anchor-height: 50px;
+$footer-height: 150px;
+$header-height: 100px;
 $header-icon-padding: 12.5px;
