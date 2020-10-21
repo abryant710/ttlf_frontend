@@ -16,11 +16,18 @@ i18next.init({
     },
 });
 
+const initialAppState = {
+  menuVisible: false,
+};
+const AppStateContext = React.createContext(initialAppState);
+
 ReactDOM.render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18next}>
-      <App />
-    </I18nextProvider>
+    <AppStateContext.Provider value={initialAppState}>
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
+    </AppStateContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

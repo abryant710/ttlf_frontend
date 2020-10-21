@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {CgCloseR} from 'react-icons/cg';
 
-import SiteMenu from '../menus/SiteMenu';
 import SocialIcons from '../../components/SocialIcons';
+
+// TODO: get provider to show menu when switched on/off
 
 function Header() {
   const [menuOpen, toggleMenu] = useState(false);
@@ -35,8 +36,6 @@ function Header() {
           )}
         </div>
       </div>
-      {/* TODO: */}
-      {menuOpen && <SiteMenu />}
     </header>
   )
 }
