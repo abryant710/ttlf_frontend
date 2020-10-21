@@ -14,16 +14,14 @@ function Header() {
             color="white"
           />
         </div>
-        <div className="header__burger">
+        <div className="header__burger center-items">
           <GiHamburgerMenu
-            className="header__burger-icon"
+            className="header__burger-icon pointer"
             size="20px"
             color="white"
           />
         </div>
       </div>
-      {/* <div className="header__image">
-      </div> */}
     </header>
   )
 }

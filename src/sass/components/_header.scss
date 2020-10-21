@@ -9,19 +9,12 @@
     left: 0;
     width: 100vw;
   }
-  &__image {
-    background-image: url(/images/solid/ttfl_backdrop.png);
-    background-size: $background-image-width-small 100%;
-    background-repeat: repeat-x;
-    height: 100px;
-    width: 100%;
-    animation: slide 30s linear infinite;
-  }
   &__icons {
     display: flex;
     flex-direction: row;
-    padding: 12.5px;
+    padding: $header-icon-padding;
     justify-content: flex-start;
+    height: 100%;
     & a {
       margin-left: 1rem;
     }
@@ -30,8 +23,8 @@
     }
   }
   &__burger {
-    padding: 12.5px;
+    padding: $header-icon-padding;
     justify-content: flex-end;
-    color: $color-white;
+    margin-left: auto;
   }
 }
