@@ -13,7 +13,7 @@ const getMenuOptions = function (t: Function): Array<string> {
 function SiteMenu() {
   const {t} = useTranslation('common');
   return (
-    <div className="siteMenu">
+    <div className="site_menu">
       {getMenuOptions(t).map((page, idx) => (
         <h3 key={idx}>{page}</h3>
       ))}
