@@ -15,6 +15,14 @@
   }
 }
 
+.fadeIn {
+  animation: .5 linear .5s fadeIn;
+}
+
+.fadeOut {
+  animation: .5 linear .5s fadeOut;
+}
+
 .rotateX360 {
   animation: .6 linear .6s rotateX360;
 }

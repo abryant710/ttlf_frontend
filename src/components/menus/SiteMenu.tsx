@@ -19,7 +19,7 @@ function SiteMenu() {
   } = useContext(AppContext);
   if (!showMenu) return null;
   return (
-    <div className="site_menu">
+    <div className={`site_menu ${showMenu && "fadeIn"}`}>
       {getMenuOptions(t).map((page, idx) => (
         <h3 key={`menu_option_${idx}`}>{page}</h3>
       ))}

@@ -2,10 +2,10 @@
   position: absolute;
   width: 100vw;
   top: calc(.5 * #{$header-height});
-  height: calc(100vh - .5 * #{$header-height} - .75 * #{$footer-height});
+  height: 1000%;
   left: 0;
   background-color: $color-secondary;
   background: radial-gradient(circle 100vw, $color-primary, $color-primary-light);
-  opacity: .4;
-  animation: .5 linear .5s fadeIn;
+  opacity: 1;
+  z-index: 1000;
 }

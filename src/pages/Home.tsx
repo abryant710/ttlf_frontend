@@ -8,7 +8,8 @@ function Home() {
   return (
     <div className="home">
       {/* Should be common.loading */}
-      {/* <Loader message={t('common.constructionMessage')} imageUrl={"images/transparent/ttlf_0013.png"} /> */}
+      <Loader message={t('common.constructionMessage')} imageUrl={"images/transparent/ttlf_0013.png"} />
+      <img className="home__vinyl" src="/images/transparent/ttlf-vinyl-record.png" alt="vinyl" />
     </div>
   );
 }
