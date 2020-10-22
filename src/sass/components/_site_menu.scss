@@ -1,9 +1,11 @@
 .site_menu {
+  position: absolute;
   width: 100vw;
-  top: 0;
-  height: 100vh;
+  top: calc(.5 * #{$header-height});
+  height: calc(100vh - .5 * #{$header-height} - .75 * #{$footer-height});
   left: 0;
-  z-index: 150;
-  background-color: silver;
-  opacity: 0;
+  background-color: $color-secondary;
+  background: radial-gradient(circle 100vw, $color-primary, $color-primary-light);
+  opacity: .4;
+  animation: .5 linear .5s fadeIn;
 }
