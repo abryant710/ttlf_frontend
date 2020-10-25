@@ -6,6 +6,7 @@
   },
   "menu": {
     "djProfiles": "DJ Profiles",
+    "liveStream": "Live Stream",
     "liveSchedule": "Live Schedule",
     "videos": "Videos",
     "mailingList": "Mailing List"

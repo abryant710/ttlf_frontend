@@ -1,0 +1,11 @@
+.vinyl_icon {
+  width: 6rem;
+  height: 6rem;
+  margin: 2rem 6rem;
+  &-1 {
+    animation: rotateZ360 2s infinite;
+  }
+  &-2 {
+    animation: rotateZ360_reverse 2s infinite;
+  }
+}

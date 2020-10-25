@@ -4,7 +4,7 @@
   &__anchor {
     display: flex;
     flex-direction: row;
-    min-height: calc(.5 * #{$header-height});
+    min-height: $header-height-offset;
     top: 0;
     left: 0;
     width: 100vw;

@@ -25,7 +25,7 @@ $color-grey-dark: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
 
-$color-white: #fff;
+$color-white: #f4f5fa;
 $color-black: #000;
 
 // FONT
@@ -43,4 +43,6 @@ $background-image-width-smallest: ($background-image-width-small / 10) + px;
 // EL HEIGHTS AND WIDTHS
 $footer-height: 150px;
 $header-height: 100px;
+$header-height-offset: calc(.5 * #{$header-height});
+$site-menu-offset: calc(-100vh + #{$header-height-offset});
 $header-icon-padding: 12.5px;

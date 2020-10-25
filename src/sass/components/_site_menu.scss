@@ -1,11 +1,41 @@
 .site_menu {
-  position: absolute;
+  @include menu-font;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 100vw;
-  top: calc(.5 * #{$header-height});
-  height: 1000%;
+  top: 100vh;
+  height: calc(100vh - 0.5 * #{$header-height});
   left: 0;
-  background-color: $color-secondary;
-  background: radial-gradient(circle 100vw, $color-primary, $color-primary-light);
+  background: linear-gradient(to bottom, $color-primary-light, $color-primary, $color-primary-dark);
+  border-radius: 10px 10px 0 0;
   opacity: 1;
   z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  color: $color-white;
+  &--open {
+    transform: translateY($site-menu-offset);
+  }
+  &--closed {
+    transform: translateY(0);
+  }
+  &__button {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+    transition: all .3s linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .site_menu {
+    @include menu-font-small;
+  }
 }
