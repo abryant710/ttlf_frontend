@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {useTranslation} from "react-i18next";
 import {FaChevronCircleLeft, FaChevronCircleRight} from 'react-icons/fa';
+
+import { Context as AppContext } from '../context/AppContext';
 
 import * as soundcloud from '../config/soundCloudTracks';
 import Loader from '../components/Loader';
@@ -21,13 +23,17 @@ const getRandomImage = function ():string {
 };
 
 function Player() {
+  const { 
+    state: {playerMinimised},
+    minimisePlayer
+  } = useContext(AppContext);
   const {t} = useTranslation('common');
   const {tracks, urlParts} = soundcloud;
   const [urlStart, urlEnd] = urlParts;
   const [chosenTrack, updateTrack] = useState(0);
-
+  const [isLoading, hasLoaded] = useState(true);
   return (
-    <div className="player">
+    <div className={`player ${playerMinimised ? "hidden" : ""}`}>
       <div className="player__container">
         <Loader
           withClasses={["bounceLeft", "image-width-small"]}
@@ -35,7 +41,13 @@ function Player() {
           isOverlay={false}
           message={tracks[chosenTrack].title}
         />
-        <div className="player__controls">
+        {isLoading && (
+          <Loader
+            showSpinner={true}
+            withClasses={["loadingAnimation", "margin-top-medium"]}
+          />
+        )}
+        <div className={`player__controls ${isLoading ? "hidden height-zero" : ""}`}>
           <div className="player__skip player__skip-back">
             <FaChevronCircleLeft
               size="30px"
@@ -46,11 +58,12 @@ function Player() {
           <iframe
             id="playerFrame"
             title="ttlf_player"
-            width="60%"
+            width="70%"
             height="120px"
             scrolling="no"
             frameBorder="no"
             allow="autoplay"
+            onLoad={() => hasLoaded(false)}
             src={`${urlStart}${tracks[chosenTrack].number}${urlEnd}`}
           >
           </iframe>
@@ -62,7 +75,10 @@ function Player() {
             />
           </div>
         </div>
-        <p className="player__close-button">{t('player.hide')}</p>
+        <p
+          className="player__close-button"
+          onClick={minimisePlayer}
+        >{t('player.hide')}</p>
       </div>
     </div>
   );

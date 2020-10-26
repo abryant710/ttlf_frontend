@@ -64,6 +64,15 @@
   }
 }
 
+@keyframes rotateY720 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(720deg);
+  }
+}
+
 @keyframes rotateZ360 {
   0% {
     transform: rotateZ(0deg);

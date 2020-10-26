@@ -11,6 +11,7 @@
   &__message {
     font-size: 4rem;
     text-align: center;
+    color: $color-primary-dark;
   }
   animation: fadeInOut ease-in-out 3s infinite;
   opacity: 0;

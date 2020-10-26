@@ -52,8 +52,8 @@
   margin-top: 1.5rem;
 }
 
-.margin-top-medium {
-  margin-top: 1.5rem;
+.height-zero {
+  height: 0;
 }
 
 .image-width-small {
@@ -99,6 +99,11 @@
   animation: .6 linear .6s rotateY360;
 }
 
+.rotateY720 {
+  animation: 1 linear 1s rotateY720;
+}
+
 .rotateZ360 {
   animation: .6 linear .6s rotateZ360;
 }
+

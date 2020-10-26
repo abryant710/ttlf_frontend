@@ -8,9 +8,9 @@ import SocialIcons from '../../components/SocialIcons';
 function Footer() {
   const {t} = useTranslation('common');
   const { 
-    state: {showPlayer}
+    state: {showPlayer, showMenu}
   } = useContext(AppContext);
-  const strobe = showPlayer ? "strobeUpFast" : "";
+  const strobe = showPlayer && !showMenu ? "strobeUpFast" : "";
   return (
     <footer className={`footer ${strobe}`}>
       <div className="footer__anchor">

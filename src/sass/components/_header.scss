@@ -25,16 +25,15 @@
       margin-left: 0rem;
     }
   }
-  &__player {
-    padding: $header-icon-padding;
-    justify-content: flex-end;
+  &__player-minimised {
+    @include header-icon;
     margin-left: auto;
-    transform: scale(1.5);
+  }
+  &__player {
+    @include header-icon;
   }
   &__burger {
-    padding: $header-icon-padding;
-    justify-content: flex-end;
-    transform: scale(1.5);
+    @include header-icon;
   }
   &__menu-icon {
     z-index: 100;

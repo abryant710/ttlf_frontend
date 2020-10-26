@@ -17,6 +17,7 @@
   }
   &__controls {
     @include flex-center;
+    width: 100%;
   }
   &__skip {
     margin: 3rem;
