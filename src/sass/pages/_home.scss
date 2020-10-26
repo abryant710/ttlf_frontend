@@ -1,8 +1,5 @@
 .home {
-  min-height: calc(100vh - #{$footer-height} - #{$header-height});
+  min-height: $min-page-height;
   min-width: 100vw;
   background-color: $color-white;
-}
-
-@media only screen and (max-width: 700px) {
 }

@@ -1,9 +1,10 @@
 .loader {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
-  min-height: calc(100vh - #{$footer-height} - #{$header-height});
+  top: $header-height;
+  min-height: calc(100vh - #{$footer-height});
   min-width: 100vw;
   background-color: $color-white;
   color: black;
@@ -11,8 +12,6 @@
     animation: bounceDown 3s infinite;
   }
   &__image {
-    width: 30rem;
-    margin-top: 1.5rem;
     animation: rotateZ360 3s infinite;
   }
   &__message {

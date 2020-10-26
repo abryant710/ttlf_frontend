@@ -7,8 +7,7 @@ function Home() {
   const {t} = useTranslation('common');
   return (
     <div className="home">
-      {/* Should be common.loading */}
-      <Loader message={t('common.constructionMessage')} imageUrl={"images/transparent/ttlf_0013.png"} />
+      <Loader widthClass="image-width-small" imageUrl={"images/transparent/ttlf_0013.png"} />
     </div>
   );
 }

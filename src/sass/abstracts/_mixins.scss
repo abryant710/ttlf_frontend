@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:      Phone

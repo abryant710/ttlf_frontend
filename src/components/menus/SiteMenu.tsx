@@ -54,14 +54,14 @@ function SiteMenu() {
       }} />
       {getSelectedMenuOptions(t, lowestSelected, options).map((page, idx) => (
         <div className="site_menu__button" key={`menu_option_${idx}`}>
-          <img className="vinyl_icon vinyl_icon-1" src="/images/transparent/ttlf-vinyl-record.png" alt="vinyl" />
+          <img className={`vinyl_icon vinyl_icon-1 vinyl_icon--${idx % 2 === 0 ? "fast" : "slow"}`} src="/images/transparent/ttlf-vinyl-record.png" alt="vinyl" />
           <h2 className={hasAnimation ? `bounceIn${idx + 1}` : ""}>{page}</h2>
-          <img className="vinyl_icon vinyl_icon-2" src="/images/transparent/ttlf-vinyl-record.png" alt="vinyl" />
+          <img className={`vinyl_icon vinyl_icon-2 vinyl_icon--${idx % 2 === 0 ? "fast" : "slow"}`} src="/images/transparent/ttlf-vinyl-record.png" alt="vinyl" />
         </div>
       ))}
       <BsChevronDown onClick={() => {
         setAnimation(false);
-        setTimeout(() => setAnimation(true), 300);
+        setTimeout(() => setAnimation(true), 100);
         setLowestSelected(transitionMenu(lowestSelected, "up", options.length))
       }} />
     </div>

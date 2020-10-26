@@ -8,6 +8,22 @@
   cursor: pointer;
 }
 
+.margin-top-medium {
+  margin-top: 1.5rem;
+}
+
+.margin-top-medium {
+  margin-top: 1.5rem;
+}
+
+.image-width-small {
+  width: 20rem;
+}
+
+.image-width-medium {
+  width: 30rem;
+}
+
 .hover-rotate {
   &:hover {
     transition: all ease-out 1s;
@@ -41,4 +57,8 @@
 
 .rotateY360 {
   animation: .6 linear .6s rotateY360;
+}
+
+.rotateZ360 {
+  animation: .6 linear .6s rotateZ360;
 }

@@ -1,5 +1,7 @@
 .header {
   height: $header-height;
+  position: fixed;
+  z-index: 1000;
   background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-white);
   &__anchor {
     display: flex;
@@ -23,10 +25,16 @@
       margin-left: 0rem;
     }
   }
-  &__burger {
+  &__player {
     padding: $header-icon-padding;
     justify-content: flex-end;
     margin-left: auto;
+    transform: scale(1.5);
+  }
+  &__burger {
+    padding: $header-icon-padding;
+    justify-content: flex-end;
+    transform: scale(1.5);
   }
   &__menu-icon {
     z-index: 100;
