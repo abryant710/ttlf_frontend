@@ -4,6 +4,46 @@
   align-items: center;
 }
 
+.center-items-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.strobeUpFast {
+  animation: strobeUp 1s infinite;
+} 
+
+.strobeDownFast {
+  animation: strobeDown 1s infinite;
+} 
+
+.strobeUpSlow {
+  animation: strobeUp 100s infinite;
+  transition: all 2s;
+} 
+
+.strobeDownSlow {
+  animation: strobeDown 100s infinite;
+  transition: all 2s;
+}
+
+.bounceDown {
+  animation: bounceDown 3s infinite;
+}
+
+.bounceLeft {
+  animation: bounceLeft 1s infinite;
+}
+
+.loadingAnimation {
+  animation: rotateZ360 3s infinite;
+}
+
 .pointer {
   cursor: pointer;
 }

@@ -23,10 +23,24 @@
   cursor: pointer;
 }
 
+@mixin small-font {
+  font-size: 14px;
+  color: $color-quaternary;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin hover-scale-medium {
+  transition: all .3s linear;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 // MEDIA QUERY MANAGER

@@ -19,7 +19,7 @@
 @keyframes bounceLeft {
   0%,  
   100% {
-    transform: translateX(0);
+    transform: translateX(10px);
   }
   50% {
     transform: translateX(-10px);
@@ -127,5 +127,35 @@
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strobeDown {
+  0% {
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-white);
+  }
+  25% {
+    background-image: linear-gradient(to bottom, $color-secondary, $color-secondary-light, $color-white);
+  }
+  50% {
+    background-image: linear-gradient(to bottom, $color-tertiary, $color-tertiary-light, $color-white);
+  }
+  75% {
+    background-image: linear-gradient(to bottom, $color-quaternary, $color-quaternary-light, $color-white);
+  }
+}
+
+@keyframes strobeUp {
+  0% {
+    background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-white);
+  }
+  25% {
+    background-image: linear-gradient(to top, $color-secondary, $color-secondary-light, $color-white);
+  }
+  50% {
+    background-image: linear-gradient(to top, $color-tertiary, $color-tertiary-light, $color-white);
+  }
+  75% {
+    background-image: linear-gradient(to top, $color-quaternary, $color-quaternary-light, $color-white);
   }
 }

@@ -12,8 +12,9 @@ function Header() {
     state: {showMenu, showPlayer},
     toggleMenu, togglePlayer
   } = useContext(AppContext);
+  const strobe = showPlayer ? "strobeDownFast" : "";
   return (
-    <header className="header">
+    <header className={`header ${strobe}`}>
       <div className="header__anchor">
         <div className="header__social-icons">
           <SocialIcons
