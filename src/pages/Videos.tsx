@@ -1,15 +1,31 @@
 import React from 'react';
+import ReactPlayer from "react-player"
 
-import Loader from '../components/Loader';
+import {urlPrefix, videos} from '../config/youTubeVideos';
 
 function Videos() {
   return (
     <div className="videos">
-      <Loader
-        withClasses={["loadingAnimation", "bounceDown"]}
-        imageUrl={"images/solid/ttlf_0006.jpg"}
-        isOverlay={true}
-      />
+      {videos.map((video, idx) => {
+        const {title, url} = video;
+        return (
+          <div className="videos__video" key={`ttlf_video_${idx}`}>
+            <h2 className="videos__video--title">{title}</h2>
+            <div className="videos__video--player">
+              <ReactPlayer
+                url={`${urlPrefix}${url}`}
+                width="100%"
+                height="100%"
+                config={{
+                  youtube: {
+                    playerVars: { showinfo: 1 }
+                  }
+                }}
+              />
+            </div>
+          </div>
+        )
+      })}
     </div>
   );
 }

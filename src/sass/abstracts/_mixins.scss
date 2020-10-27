@@ -30,6 +30,12 @@
   cursor: pointer;
 }
 
+@mixin big-font {
+  font-size: 4rem;
+  text-align: center;
+  color: $color-primary-dark;
+}
+
 @mixin header-icon {
   padding: $header-icon-padding;
   flex-direction: column;

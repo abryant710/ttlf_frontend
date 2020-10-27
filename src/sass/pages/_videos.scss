@@ -1,0 +1,37 @@
+.videos {
+  min-height: $min-page-height;
+  min-width: 100vw;
+  background-color: $color-white;
+  padding-top: $header-height;
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  &__video {
+    margin: 6rem 2rem;
+    @include flex-center;
+    flex-direction: column;
+    &--player {
+      height: $youtube-video-height;
+      width: $youtube-video-width;
+    }
+    &--title {
+      @include big-font;
+      max-width: $youtube-video-width;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: $youtube-video-width) {
+  .videos {
+    &__video {
+      &--player {
+        width: calc(0.5 * #{$youtube-video-width});
+        height: calc(0.5 * #{$youtube-video-height});
+      }
+      &--title {
+        font-size: 2rem;
+      }
+    }
+  }
+}

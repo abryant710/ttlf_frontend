@@ -9,9 +9,7 @@
   background-color: $color-white;
   color: black;
   &__message {
-    font-size: 4rem;
-    text-align: center;
-    color: $color-primary-dark;
+    @include big-font;
   }
   animation: fadeInOut ease-in-out 3s infinite;
   opacity: 0;
