@@ -3,6 +3,7 @@ import {GiHamburgerMenu, GiSpeakerOff} from 'react-icons/gi';
 import {CgCloseR} from 'react-icons/cg';
 import {BsSpeaker} from 'react-icons/bs';
 import {RiSlideshow3Fill} from 'react-icons/ri';
+import {BiMinus} from 'react-icons/bi';
 
 import { Context as AppContext } from '../../context/AppContext';
 import SocialIcons from '../../components/SocialIcons';
@@ -28,6 +29,14 @@ function Header() {
           {playerMinimised && showPlayer && (
             <RiSlideshow3Fill
               className="header__menu-icon pointer rotateY720"
+              size="20px"
+              color="white"
+              onClick={minimisePlayer}
+            />
+          )}
+          {!playerMinimised && showPlayer && (
+            <BiMinus
+              className="header__menu-icon pointer rotateX360"
               size="20px"
               color="white"
               onClick={minimisePlayer}

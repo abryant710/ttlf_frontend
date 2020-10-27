@@ -2,16 +2,16 @@ import React from 'react';
 
 import Loader from '../components/Loader';
 
-function Home() {
+function Videos() {
   return (
-    <div className="home">
+    <div className="videos">
       <Loader
         withClasses={["loadingAnimation", "bounceDown"]}
-        imageUrl={"images/transparent/ttlf_0013.png"}
+        imageUrl={"images/transparent/ttlf_0002.png"}
         isOverlay={true}
       />
     </div>
   );
 }
 
-export default Home;
+export default Videos;

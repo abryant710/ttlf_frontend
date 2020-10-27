@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Bios from './pages/Bios';
+import Videos from './pages/Videos';
 import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import SiteMenu from './components/menus/SiteMenu';
@@ -17,6 +19,8 @@ function App() {
       <SiteMenu />
       <Route path="/" exact component={Home} />
       <Route path="/home" exact component={Home} />
+      <Route path="/bios" exact component={Bios} />
+      <Route path="/videos" exact component={Videos} />
       <Footer />
     </Router>
   );

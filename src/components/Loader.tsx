@@ -12,7 +12,7 @@ type LoaderProps = {
 const Loader = ({ imageUrl, message, withClasses, isOverlay, showSpinner }: LoaderProps) => {
   return (
     <div className={isOverlay ? "loader" : "center-items-col"}>
-      {message && <h1 className="loader__message">{message}</h1>}
+      {message && <h2 className="loader__message">{message}</h2>}
       {showSpinner ? (
         <ImSpinner2
           size="30px"

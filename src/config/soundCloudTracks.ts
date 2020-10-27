@@ -59,5 +59,5 @@ export const tracks = [
 
 export const urlParts = [
   "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/",
-  "&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false",
+  "&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&show_artwork=false&visual=false",
 ];
