@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {useTranslation} from "react-i18next";
 import {FaChevronCircleLeft, FaChevronCircleRight} from 'react-icons/fa';
+import {random} from 'lodash';
 
 import { Context as AppContext } from '../context/AppContext';
 
@@ -15,10 +16,8 @@ const changeTrack = function (track: number, direction: string): number {
   return track - 1 < 0 ? tracks.length - 1 : track - 1;
 };
 
-// TODO: move to utils file
 const getRandomImage = function ():string {
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const newNum = items[Math.floor(Math.random() * items.length)]
+  const newNum = random(1, 12);
   return `${newNum < 10 ? '0' : ""}${newNum}`;
 };
 
@@ -57,14 +56,14 @@ function Player() {
           </div>
           <iframe
             id="playerFrame"
-            title="ttlf_player"
+            title="ttlfPlayer"
             width="70%"
             height="120px"
             scrolling="no"
             frameBorder="no"
             allow="autoplay"
             onLoad={() => hasLoaded(false)}
-            src={`${urlStart}${tracks[chosenTrack].number}${urlEnd}`}
+            src={`${urlStart}${tracks[chosenTrack].url}${urlEnd}`}
           >
           </iframe>
           <div className="player__skip player__skip-fwd">

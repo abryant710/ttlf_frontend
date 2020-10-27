@@ -12,8 +12,8 @@ type menuOptionData = {
 
 const getMenuOptions = function (t: Function): Array<menuOptionData> {
   return [
-    {name: t('menu.liveStream'), route: ''},
-    {name: t('menu.liveSchedule'), route: ''},
+    // {name: t('menu.liveStream'), route: ''},
+    {name: t('menu.liveSchedule'), route: '/schedule'},
     {name: t('menu.djProfiles'), route: '/bios'},
     {name: t('menu.videos'), route: '/videos'},
     // {name: t('menu.mailingList'), route: ''},
@@ -60,14 +60,16 @@ function SiteMenu() {
   const [lowestSelected, setLowestSelected] = useState(0);
   const [hasAnimation, setAnimation] = useState(true);
 
+  const selectedMenuOptions = getSelectedMenuOptions(t, lowestSelected, options);
+
   return (
     <div className={`site_menu site_menu--${showMenu ? "open" : "closed"}`}>
-      <BsChevronUp onClick={() => {
+      {selectedMenuOptions.length > 3 && <BsChevronUp onClick={() => {
         setAnimation(false);
         setTimeout(() => setAnimation(true), 100);
         setLowestSelected(transitionMenu(lowestSelected, "down", options.length))
-      }} />
-      {getSelectedMenuOptions(t, lowestSelected, options).map((page, idx) => {
+      }} />}
+      {selectedMenuOptions.map((page, idx) => {
         const {name, route} = page;
         return ( 
           <div className="site_menu__button" key={`menu_option_${idx}`}>
@@ -85,11 +87,11 @@ function SiteMenu() {
           </div>
         )
       })}
-      <BsChevronDown onClick={() => {
+      {selectedMenuOptions.length > 3 && <BsChevronDown onClick={() => {
         setAnimation(false);
         setTimeout(() => setAnimation(true), 100);
         setLowestSelected(transitionMenu(lowestSelected, "up", options.length))
-      }} />
+      }} />}
     </div>
   );
 }
