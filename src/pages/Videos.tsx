@@ -18,7 +18,10 @@ function Videos() {
                 height="100%"
                 config={{
                   youtube: {
-                    playerVars: { showinfo: 1 }
+                    playerVars: { 
+                      'showinfo': 1,
+                      'controls': 1,
+                    }
                   }
                 }}
               />
