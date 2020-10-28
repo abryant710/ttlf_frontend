@@ -1,6 +1,6 @@
 .footer {
   height: $footer-height;
-  background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-primary-light, $color-primary-light, $color-white);
+  background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-primary-light-alpha, $color-white-alpha);
   display: flex;
   align-items: flex-end;
   justify-content: center;

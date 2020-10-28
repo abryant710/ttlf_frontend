@@ -141,30 +141,30 @@
 
 @keyframes strobeDown {
   0% {
-    background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-white);
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-primary-light-alpha, $color-white-alpha);
   }
   25% {
-    background-image: linear-gradient(to bottom, $color-secondary, $color-secondary-light, $color-white);
+    background-image: linear-gradient(to bottom, $color-secondary, $color-secondary-light, $color-secondary-light-alpha, $color-white-alpha);
   }
   50% {
-    background-image: linear-gradient(to bottom, $color-tertiary, $color-tertiary-light, $color-white);
+    background-image: linear-gradient(to bottom, $color-tertiary, $color-tertiary-light, $color-tertiary-light-alpha, $color-white-alpha);
   }
   75% {
-    background-image: linear-gradient(to bottom, $color-quaternary, $color-quaternary-light, $color-white);
+    background-image: linear-gradient(to bottom, $color-quaternary, $color-quaternary-light, $color-quaternary-light-alpha, $color-white-alpha);
   }
 }
 
 @keyframes strobeUp {
   0% {
-    background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-white);
+    background-image: linear-gradient(to top, $color-primary, $color-primary-light, $color-primary-light-alpha, $color-white-alpha);
   }
   25% {
-    background-image: linear-gradient(to top, $color-secondary, $color-secondary-light, $color-white);
+    background-image: linear-gradient(to top, $color-secondary, $color-secondary-light, $color-secondary-light-alpha, $color-white-alpha);
   }
   50% {
-    background-image: linear-gradient(to top, $color-tertiary, $color-tertiary-light, $color-white);
+    background-image: linear-gradient(to top, $color-tertiary, $color-tertiary-light, $color-tertiary-light-alpha, $color-white-alpha);
   }
   75% {
-    background-image: linear-gradient(to top, $color-quaternary, $color-quaternary-light, $color-white);
+    background-image: linear-gradient(to top, $color-quaternary, $color-quaternary-light, $color-quaternary-light-alpha, $color-white-alpha);
   }
 }

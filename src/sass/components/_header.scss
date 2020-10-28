@@ -2,7 +2,7 @@
   height: $header-height;
   position: fixed;
   z-index: 1000;
-  background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-white);
+  background-image: linear-gradient(to bottom, $color-primary, $color-primary-light, $color-primary-light-alpha, $color-white-alpha);
   &__anchor {
     display: flex;
     flex-direction: row;
