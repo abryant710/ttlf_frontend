@@ -13,9 +13,9 @@ type menuOptionData = {
 const getMenuOptions = function (t: Function): Array<menuOptionData> {
   return [
     // {name: t('menu.liveStream'), route: ''},
-    {name: t('menu.liveSchedule'), route: '/schedule'},
-    {name: t('menu.djProfiles'), route: '/bios'},
     {name: t('menu.videos'), route: '/videos'},
+    {name: t('menu.djProfiles'), route: '/bios'},
+    {name: t('menu.liveSchedule'), route: '/schedule'},
     // {name: t('menu.mailingList'), route: ''},
   ];
 };

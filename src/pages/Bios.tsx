@@ -4,9 +4,9 @@ import Loader from '../components/Loader';
 
 function Bios() {
   return (
-    <div className="bios">
+    <div className="bios margin-bottom-footer">
       <Loader
-        message="Coming soon"
+        message="Bios coming soon"
         withClasses={["loadingAnimation", "bounceDown"]}
         imageUrl={"images/transparent/ttlf_0001.png"}
         isOverlay={true}

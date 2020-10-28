@@ -4,6 +4,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   &__anchor {
     display: flex;
     flex-direction: column;

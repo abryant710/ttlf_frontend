@@ -38,13 +38,12 @@
 @media only screen and (max-width: 600px) {
   .player {
     height: 80vh;
-    width: 90vw;
-    margin-left: 5vw;
+    width: 100vw;
     &__skip {
       margin: 0 1rem 0;
     }
     &__container {
-      width: 90%;
+      width: 100%;
       padding: 1rem;
     }
   }

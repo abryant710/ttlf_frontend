@@ -5,7 +5,7 @@ import {urlPrefix, videos} from '../config/youTubeVideos';
 
 function Videos() {
   return (
-    <div className="videos">
+    <div className="videos margin-bottom-footer">
       {videos.map((video, idx) => {
         const {title, url} = video;
         return (

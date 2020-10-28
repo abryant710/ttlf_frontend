@@ -4,7 +4,7 @@ import Loader from '../components/Loader';
 
 function Home() {
   return (
-    <div className="home">
+    <div className="home margin-bottom-footer">
       <Loader
         withClasses={["loadingAnimation", "bounceDown"]}
         imageUrl={"images/transparent/ttlf_0013.png"}
