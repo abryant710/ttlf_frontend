@@ -36,7 +36,7 @@ function Player() {
       <div className="player__container">
         <Loader
           withClasses={["bounceLeft", "image-width-small"]}
-          imageUrl={`images/solid/ttlf_00${getRandomImage()}.png`}
+          imageUrl={`images/transparent/ttlf_00${getRandomImage()}.png`}
           isOverlay={false}
           message={tracks[chosenTrack].title}
         />
