@@ -34,5 +34,8 @@
 @media only screen and (max-width: 600px) {
   .site_menu {
     @include menu-font-small;
+    &--open {
+      padding: 2rem 0 4rem 0;
+    }
   }
 }

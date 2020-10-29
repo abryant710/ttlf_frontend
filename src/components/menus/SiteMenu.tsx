@@ -72,13 +72,16 @@ function SiteMenu() {
       {selectedMenuOptions.map((page, idx) => {
         const {name, route} = page;
         return ( 
-          <div className="site_menu__button" key={`menu_option_${idx}`}>
+          <div
+            className="site_menu__button" key={`menu_option_${idx}`}
+            onClick={() => handleClick(route)}
+          >
             <img
               className={`vinyl_icon vinyl_icon-1 vinyl_icon--${idx % 2 === 0 ? "fast" : "slow"}`}
               src="/images/transparent/ttlf-vinyl-record.png"
               alt="vinyl"
             />
-            <h2 onClick={() => handleClick(route)} className={hasAnimation ? `bounceIn${idx + 1}` : ""}>{name}</h2>
+            <h2 className={hasAnimation ? `bounceIn${idx + 1}` : ""}>{name}</h2>
             <img
               className={`vinyl_icon vinyl_icon-2 vinyl_icon--${idx % 2 === 0 ? "fast" : "slow"}`}
               src="/images/transparent/ttlf-vinyl-record.png"
