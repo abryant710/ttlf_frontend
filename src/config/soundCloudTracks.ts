@@ -1,5 +1,7 @@
 import {shuffle} from 'lodash';
 
+export const urlPrefix = "https://soundcloud.com";
+
 export const tracks = shuffle([
   {
     title: "Vini Vici vs Ace Ventura - The Calling (Jilax Flip)",
@@ -142,8 +144,3 @@ export const tracks = shuffle([
     url: "/ttlfcanyoudefineit/ttlf-mix"
   },
 ]);
-
-export const urlParts = [
-  "https://w.soundcloud.com/player/?url=https://soundcloud.com",
-  "&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&show_artwork=false&visual=false",
-];

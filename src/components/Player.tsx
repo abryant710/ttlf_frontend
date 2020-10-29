@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {useTranslation} from "react-i18next";
+import ReactPlayer from "react-player";
 import {FaChevronCircleLeft, FaChevronCircleRight} from 'react-icons/fa';
 import {random} from 'lodash';
 
@@ -24,11 +25,10 @@ const getRandomImage = function ():string {
 function Player() {
   const { 
     state: {playerMinimised},
-    minimisePlayer
+    toggleMinimisePlayer
   } = useContext(AppContext);
   const {t} = useTranslation('common');
-  const {tracks, urlParts} = soundcloud;
-  const [urlStart, urlEnd] = urlParts;
+  const {tracks, urlPrefix} = soundcloud;
   const [chosenTrack, updateTrack] = useState(0);
   const [hasLoaded, hideLoadingSpinner] = useState(false);
   return (
@@ -54,18 +54,26 @@ function Player() {
               onClick={() => updateTrack(changeTrack(chosenTrack, "back"))}
             />
           </div>
-          <iframe
-            id="playerFrame"
-            title="ttlfPlayer"
+          <ReactPlayer
+            url={`${urlPrefix}${tracks[chosenTrack].url}`}
             width="70%"
             height="120px"
-            scrolling="no"
-            frameBorder="no"
-            allow="autoplay"
-            onLoad={() => hideLoadingSpinner(true)}
-            src={`${urlStart}${tracks[chosenTrack].url}${urlEnd}`}
-          >
-          </iframe>
+            config={{
+              soundcloud: {
+                options: { 
+                  'hide_related': true,
+                  'show_comments': false,
+                  'show_user': true,
+                  'show_reposts': false,
+                  'show_teaser': false,
+                  'show_artwork': false,
+                  'visual': false,
+                }
+              }
+            }}
+            onReady={() => hideLoadingSpinner(true)}
+            playing={true}
+          />
           <div className="player__skip player__skip-fwd">
             <FaChevronCircleRight
               size="30px"
@@ -77,7 +85,7 @@ function Player() {
         {/* TODO: make a reusable button component */}
         <p
           className="player__close-button"
-          onClick={minimisePlayer}
+          onClick={toggleMinimisePlayer}
         >{t('player.hide')}</p>
       </div>
     </div>

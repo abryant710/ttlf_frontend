@@ -12,7 +12,7 @@ import Player from '../../components/Player';
 function Header() {
   const { 
     state: {showMenu, showPlayer, playerMinimised},
-    toggleMenu, togglePlayer, minimisePlayer
+    toggleMenu, togglePlayer, toggleMinimisePlayer
   } = useContext(AppContext);
   const strobe = showPlayer && !showMenu ? "strobeDownFast" : "";
   return (
@@ -31,7 +31,7 @@ function Header() {
               className="header__menu-icon pointer rotateY720"
               size="20px"
               color="white"
-              onClick={minimisePlayer}
+              onClick={toggleMinimisePlayer}
             />
           )}
           {!playerMinimised && showPlayer && (
@@ -39,7 +39,7 @@ function Header() {
               className="header__menu-icon pointer rotateX360"
               size="20px"
               color="white"
-              onClick={minimisePlayer}
+              onClick={toggleMinimisePlayer}
             />
           )}
         </div>

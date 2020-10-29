@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import ReactPlayer from "react-player"
+import ReactPlayer from "react-player";
 
 import { Context as AppContext } from '../context/AppContext';
 

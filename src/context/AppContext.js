@@ -14,17 +14,19 @@ const appReducer = (state, { type, payload }) => {
       return { ...state, showPlayer: !showPlayer };
     case 'player_off':
       return { ...state, showPlayer: false, playerMinimised: false };
-    case 'minimise_player':
+    case 'toggle_minimise_player':
       const {playerMinimised} = state;
       return { ...state, playerMinimised: !playerMinimised };
+    case 'minimise_player':
+      return { ...state, playerMinimised: true };
     default:
       return state;
   }
 };
 
-const minimisePlayer = dispatch => () => {
+const toggleMinimisePlayer = dispatch => () => {
   dispatch({
-    type: 'minimise_player',
+    type: 'toggle_minimise_player',
   });
 };
 
@@ -34,20 +36,26 @@ const togglePlayer = dispatch => () => {
   });
 };
 
-const turnPlayerOff = dispatch => () => {
-  dispatch({
-    type: 'player_off',
-  });
-};
-
 const toggleMenu = dispatch => () => {
   dispatch({
     type: 'toggle_menu',
   });
 };
 
+const turnPlayerOff = dispatch => () => {
+  dispatch({
+    type: 'player_off',
+  });
+};
+
+const minimisePlayer = dispatch => () => {
+  dispatch({
+    type: 'minimise_player',
+  });
+};
+
 export const { Context, Provider } = createDataContext(
   appReducer,
-  { toggleMenu, togglePlayer, minimisePlayer, turnPlayerOff },
+  { toggleMenu, togglePlayer, toggleMinimisePlayer, turnPlayerOff, minimisePlayer },
   { showMenu: false, showPlayer: true, playerMinimised: false }
 );
