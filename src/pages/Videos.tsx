@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import ReactPlayer from "react-player"
+
+import { Context as AppContext } from '../context/AppContext';
 
 import {urlPrefix, videos} from '../config/youTubeVideos';
 
 function Videos() {
+  const {
+    state: {showPlayer},
+    turnPlayerOff
+  } = useContext(AppContext);
+  const [videoPlaying, changeVideoPlaying] = useState(-1);
   return (
     <div className="videos margin-bottom-footer">
       {videos.map((video, idx) => {
@@ -24,6 +31,13 @@ function Videos() {
                     }
                   }
                 }}
+                onReady={() => {/* TODO: Hide / show a loading spinner for each */}}
+                onPlay={() => {
+                  turnPlayerOff();
+                  changeVideoPlaying(idx);
+                }}
+                onPause={() => changeVideoPlaying(-1)}
+                playing={!showPlayer && videoPlaying === idx}
               />
             </div>
           </div>
