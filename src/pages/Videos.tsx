@@ -36,7 +36,7 @@ function Videos() {
                   turnPlayerOff();
                   changeVideoPlaying(idx);
                 }}
-                onPause={() => changeVideoPlaying(-1)}
+                onPause={() => {}}
                 playing={!showPlayer && videoPlaying === idx}
               />
             </div>
