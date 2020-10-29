@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Bios from './pages/Bios';
@@ -14,7 +9,7 @@ import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import SiteMenu from './components/menus/SiteMenu';
 import './sass/main.sass';
- 
+
 function App() {
   return (
     <Router>

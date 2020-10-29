@@ -7,9 +7,9 @@ function Bios() {
     <div className="bios margin-bottom-footer">
       <Loader
         message="Bios coming soon"
-        withClasses={["loadingAnimation", "bounceDown"]}
-        imageUrl={"images/transparent/ttlf_0001.png"}
-        isOverlay={true}
+        withClasses={['loadingAnimation', 'bounceDown']}
+        imageUrl="images/transparent/ttlf_0001.png"
+        isOverlay
       />
     </div>
   );

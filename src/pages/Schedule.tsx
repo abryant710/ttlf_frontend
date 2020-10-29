@@ -7,9 +7,9 @@ function Schedule() {
     <div className="schedule margin-bottom-footer">
       <Loader
         message="Live schedule coming soon"
-        withClasses={["loadingAnimation", "bounceDown"]}
-        imageUrl={"images/transparent/ttlf_0007.png"}
-        isOverlay={true}
+        withClasses={['loadingAnimation', 'bounceDown']}
+        imageUrl="images/transparent/ttlf_0007.png"
+        isOverlay
       />
     </div>
   );

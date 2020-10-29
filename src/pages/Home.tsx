@@ -5,11 +5,7 @@ import Loader from '../components/Loader';
 function Home() {
   return (
     <div className="home margin-bottom-footer">
-      <Loader
-        withClasses={["loadingAnimation", "bounceDown"]}
-        imageUrl={"images/transparent/ttlf_0013.png"}
-        isOverlay={true}
-      />
+      <Loader withClasses={['loadingAnimation', 'bounceDown']} imageUrl="images/transparent/ttlf_0013.png" isOverlay />
     </div>
   );
 }

@@ -1,22 +1,22 @@
-import React, {useContext, useState} from 'react';
-import ReactPlayer from "react-player";
+import React, { useContext, useState } from 'react';
+import ReactPlayer from 'react-player';
 
 import { Context as AppContext } from '../context/AppContext';
 
-import {urlPrefix, videos} from '../config/youTubeVideos';
+import { urlPrefix, videos } from '../config/youTubeVideos';
 
 function Videos() {
   const {
-    state: {showPlayer},
-    turnPlayerOff
+    state: { showPlayer },
+    turnPlayerOff,
   } = useContext(AppContext);
   const [videoPlaying, changeVideoPlaying] = useState(-1);
   return (
     <div className="videos margin-bottom-footer">
       {videos.map((video, idx) => {
-        const {title, url} = video;
+        const { title, url } = video;
         return (
-          <div className="videos__video" key={`ttlf_video_${idx}`}>
+          <div className="videos__video" key={title}>
             <h2 className="videos__video--title">{title}</h2>
             <div className="videos__video--player">
               <ReactPlayer
@@ -25,23 +25,24 @@ function Videos() {
                 height="100%"
                 config={{
                   youtube: {
-                    playerVars: { 
-                      'showinfo': 1,
-                      'controls': 1,
-                    }
-                  }
+                    playerVars: {
+                      showinfo: 1,
+                      controls: 1,
+                    },
+                  },
                 }}
-                onReady={() => {/* TODO: Hide / show a loading spinner for each */}}
+                onReady={() => {
+                  /* TODO: Hide / show a loading spinner for each */
+                }}
                 onPlay={() => {
                   turnPlayerOff();
                   changeVideoPlaying(idx);
                 }}
-                onPause={() => {}}
                 playing={!showPlayer && videoPlaying === idx}
               />
             </div>
           </div>
-        )
+        );
       })}
     </div>
   );

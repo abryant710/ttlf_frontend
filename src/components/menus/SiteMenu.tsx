@@ -20,18 +20,14 @@ function getMenuOptions(t: Function): Array<menuOptionData> {
   ];
 }
 
-const transitionMenu = function (lowest: number, direction: string, numOptions: number): number {
+function transitionMenu(lowest: number, direction: string, numOptions: number): number {
   if (direction === 'up') {
     return lowest - 1 < 0 ? numOptions - 1 : lowest - 1;
   }
   return lowest + 1 >= numOptions ? 0 : lowest + 1;
-};
+}
 
-const getSelectedMenuOptions = function (
-  t: Function,
-  lowest: number,
-  options: Array<menuOptionData>,
-): Array<menuOptionData> {
+function getSelectedMenuOptions(t: Function, lowest: number, options: Array<menuOptionData>): Array<menuOptionData> {
   let newMiddle = lowest + 1;
   let newHighest = lowest + 2;
   if (newHighest === options.length) {
@@ -42,7 +38,7 @@ const getSelectedMenuOptions = function (
     newHighest = 1;
   }
   return [options[lowest], options[newMiddle], options[newHighest]];
-};
+}
 
 function SiteMenu() {
   const { t } = useTranslation('common');
@@ -54,11 +50,11 @@ function SiteMenu() {
   } = useContext(AppContext);
 
   const history = useHistory();
-  const handleClick = function (route: string): void {
+  function handleClick(route: string): void {
     minimisePlayer();
     toggleMenu();
     history.push(route);
-  };
+  }
 
   const [lowestSelected, setLowestSelected] = useState(0);
   const [hasAnimation, setAnimation] = useState(true);

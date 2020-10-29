@@ -1,21 +1,21 @@
-import React, {useContext} from 'react';
-import {useTranslation} from "react-i18next";
+import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaSoundcloud, FaYoutube, FaFacebook, FaTwitch } from 'react-icons/fa';
 import ReactTooltip from 'react-tooltip';
 
-import {externalLinks} from '../config/externalLinks';
+import externalLinks from '../config/externalLinks';
 import { Context as AppContext } from '../context/AppContext';
 
 type SocialIconsProps = {
-  className: string,
-  size: string,
-  color: string,
-}
+  className: string;
+  size: string;
+  color: string;
+};
 
-function SocialIcons({className, size, color}: SocialIconsProps) {
-  const {t} = useTranslation('common');
+function SocialIcons({ className, size, color }: SocialIconsProps) {
+  const { t } = useTranslation('common');
   const {
-    state: {showMenu}
+    state: { showMenu },
   } = useContext(AppContext);
   return (
     <div className={className}>
@@ -26,10 +26,7 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         href={externalLinks.soundcloud}
         data-tip={t('externalLinks.soundcloud')}
       >
-        <FaSoundcloud
-          color={color}
-          size={size}
-        />
+        <FaSoundcloud color={color} size={size} />
       </a>
       <a
         target="_blank"
@@ -38,10 +35,7 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         href={externalLinks.youtube}
         data-tip={t('externalLinks.youtube')}
       >
-        <FaYoutube
-          color={color}
-          size={size}
-        />
+        <FaYoutube color={color} size={size} />
       </a>
       <a
         target="_blank"
@@ -50,10 +44,7 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         href={externalLinks.facebook}
         data-tip={t('externalLinks.facebook')}
       >
-        <FaFacebook
-          color={color}
-          size={size}
-        />
+        <FaFacebook color={color} size={size} />
       </a>
       <a
         target="_blank"
@@ -62,14 +53,9 @@ function SocialIcons({className, size, color}: SocialIconsProps) {
         href={externalLinks.twitch}
         data-tip={t('externalLinks.twitch')}
       >
-        <FaTwitch
-          color={color}
-          size={size}
-        />
+        <FaTwitch color={color} size={size} />
       </a>
-      <ReactTooltip
-        disable={!!showMenu}
-      />
+      <ReactTooltip disable={!!showMenu} />
     </div>
   );
 }
