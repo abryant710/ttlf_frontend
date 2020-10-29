@@ -30,7 +30,7 @@ function Player() {
   const {tracks, urlParts} = soundcloud;
   const [urlStart, urlEnd] = urlParts;
   const [chosenTrack, updateTrack] = useState(0);
-  const [isLoading, hasLoaded] = useState(true);
+  const [hasLoaded, hideLoadingSpinner] = useState(false);
   return (
     <div className={`player ${playerMinimised ? "hidden" : ""}`}>
       <div className="player__container">
@@ -40,13 +40,13 @@ function Player() {
           isOverlay={false}
           message={tracks[chosenTrack].title}
         />
-        {isLoading && (
+        {!hasLoaded && (
           <Loader
             showSpinner={true}
             withClasses={["loadingAnimation", "margin-top-medium"]}
           />
         )}
-        <div className={`player__controls ${isLoading ? "hidden height-zero" : ""}`}>
+        <div className={`player__controls ${!hasLoaded ? "hidden height-zero" : ""}`}>
           <div className="player__skip player__skip-back">
             <FaChevronCircleLeft
               size="30px"
@@ -62,7 +62,7 @@ function Player() {
             scrolling="no"
             frameBorder="no"
             allow="autoplay"
-            onLoad={() => hasLoaded(false)}
+            onLoad={() => hideLoadingSpinner(true)}
             src={`${urlStart}${tracks[chosenTrack].url}${urlEnd}`}
           >
           </iframe>
@@ -74,6 +74,7 @@ function Player() {
             />
           </div>
         </div>
+        {/* TODO: make a reusable button component */}
         <p
           className="player__close-button"
           onClick={minimisePlayer}
