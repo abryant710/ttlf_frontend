@@ -12,7 +12,7 @@ type menuOptionData = {
 
 function getMenuOptions(t: Function): Array<menuOptionData> {
   return [
-    // {name: t('menu.liveStream'), route: ''},
+    { name: t('menu.liveStream'), route: '/live' },
     { name: t('menu.videos'), route: '/videos' },
     { name: t('menu.djProfiles'), route: '/bios' },
     { name: t('menu.liveSchedule'), route: '/schedule' },
@@ -63,7 +63,7 @@ function SiteMenu() {
 
   return (
     <div className={`site_menu site_menu--${showMenu ? 'open' : 'closed'}`}>
-      {selectedMenuOptions.length > 3 && (
+      {options.length > 3 && (
         <BsChevronUp
           onClick={() => {
             setAnimation(false);
@@ -90,7 +90,7 @@ function SiteMenu() {
           </div>
         );
       })}
-      {selectedMenuOptions.length > 3 && (
+      {options.length > 3 && (
         <BsChevronDown
           onClick={() => {
             setAnimation(false);

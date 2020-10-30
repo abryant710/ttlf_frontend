@@ -25,6 +25,16 @@
       margin-left: 0rem;
     }
   }
+  &__back-icon {
+    display: flex;
+    flex-direction: row;
+    padding: $header-icon-padding;
+    justify-content: flex-start;
+    height: 100%;
+    color: $color-white;
+    font-size: 24px;
+    cursor: pointer;
+  }
   &__player-minimised {
     @include header-icon;
     margin-left: auto;

@@ -4,6 +4,7 @@ import { CgCloseR } from 'react-icons/cg';
 import { BsSpeaker } from 'react-icons/bs';
 import { RiSlideshow3Fill } from 'react-icons/ri';
 import { BiMinus } from 'react-icons/bi';
+import { useHistory } from 'react-router-dom';
 
 import { Context as AppContext } from '../../context/AppContext';
 import SocialIcons from '../SocialIcons';
@@ -16,12 +17,19 @@ function Header() {
     togglePlayer,
     toggleMinimisePlayer,
   } = useContext(AppContext);
+
   const strobe = showPlayer && !showMenu ? 'strobeDownFast' : '';
+
+  const history = useHistory();
+
   return (
     <header className={`header ${strobe}`}>
       <div className="header__anchor">
         <div className="header__social-icons">
-          <SocialIcons className="header__icons" size="20px" color="white" />
+          <div onClick={history.goBack} className="header__back-icon">
+            &larr; Back
+          </div>
+          {/* <SocialIcons className="header__icons" size="20px" color="white" /> */}
         </div>
         <div className="header__player-minimised">
           {playerMinimised && showPlayer && (

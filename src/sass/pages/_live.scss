@@ -1,0 +1,37 @@
+.live {
+  min-height: $min-page-height;
+  min-width: 100vw;
+  background-color: $color-white;
+  padding-top: $header-height;
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  &__video {
+    margin: 6rem 2rem;
+    @include flex-center;
+    flex-direction: column;
+    &--player {
+      height: $live-video-height;
+      width: $live-video-width;
+    }
+    &--title {
+      @include big-font;
+      max-width: $live-video-width;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: $live-video-width) {
+  .live {
+    &__video {
+      &--player {
+        width: calc(0.5 * #{$live-video-width});
+        height: calc(0.5 * #{$live-video-height});
+      }
+      &--title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
