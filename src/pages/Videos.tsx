@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import { Context as AppContext } from '../context/AppContext';
 
 import Loader from '../components/Loader';
+import BackToTop from '../components/BackToTop';
 import { urlPrefix, videos } from '../config/youTubeVideos';
 
 function Videos() {
@@ -54,6 +55,7 @@ function Videos() {
           </div>
         );
       })}
+      <BackToTop />
     </div>
   );
 }

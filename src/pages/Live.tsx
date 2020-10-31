@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Live = () => {
+function Live() {
   const { t } = useTranslation('common');
   const [width, height] = [640, 360];
   let factor = 1;
