@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
 
 function BackToTop() {

@@ -29,6 +29,6 @@ function Live() {
       </div>
     </div>
   );
-};
+}
 
 export default Live;
