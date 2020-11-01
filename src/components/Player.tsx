@@ -9,6 +9,7 @@ import { Context as AppContext } from '../context/AppContext';
 import * as soundcloud from '../config/soundCloudTracks';
 import { getImage } from '../utils/utils';
 import Loader from './Loader';
+import Button from './Button';
 
 function changeTrack(track: number, direction: string): number {
   const { tracks } = soundcloud;
@@ -73,10 +74,7 @@ function Player() {
             />
           </div>
         </div>
-        {/* TODO: make a reusable button component */}
-        <p className="player__close-button" onClick={toggleMinimisePlayer}>
-          {t('player.hide')}
-        </p>
+        <Button className="player__close-button" onClick={toggleMinimisePlayer} text={t('player.hide')} />
       </div>
     </div>
   );
