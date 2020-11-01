@@ -1,0 +1,50 @@
+.bios {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  &__bio {
+    width: 80%;
+    margin-top: $header-height;
+    &:last-of-type {
+      margin-bottom: $footer-height;
+    }
+    &--title {
+      @include big-font;
+    }
+    &--nickname {
+      font-size: 2rem;
+      text-align: center;
+      color: $color-grey-dark-2;
+      &-dark {
+        font-size: 3rem;
+        color: $color-grey-dark-3;
+      }
+    }
+    &--paragraph {
+      @include paragraph-font;
+      width: 100%;
+      margin: 2rem 0;
+      padding: 2rem;
+      color: $color-white;
+      text-align: left;
+      border-radius: 6px;
+      &-1 {
+        background-color: $color-primary-dark;
+      }
+      &-2 {
+        background-color: $color-secondary-dark;
+      }
+      &-3 {
+        background-color: $color-tertiary-dark;
+      }
+      &-4 {
+        background-color: $color-quaternary-dark;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $live-video-width) {
+  .bios {
+  }
+}

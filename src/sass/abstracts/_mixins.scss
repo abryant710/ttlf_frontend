@@ -30,6 +30,12 @@
   cursor: pointer;
 }
 
+@mixin paragraph-font {
+  font-size: 18px;
+  color: $color-black;
+  font-weight: 300;
+}
+
 @mixin big-font {
   font-size: 4rem;
   text-align: center;

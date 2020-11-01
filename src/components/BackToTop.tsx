@@ -19,9 +19,9 @@ function BackToTop() {
   window.addEventListener('scroll', checkScrollTop);
 
   return (
-    <div className="back-to-top" style={{ height: 60, display: showScroll ? 'flex' : 'none' }}>
+    <div className="back-to-top" style={{ height: 60, display: showScroll ? 'flex' : 'none' }} onClick={scrollTop}>
       <p className="back-to-top__text">Top</p>
-      <FaArrowCircleUp className="back-to-top__icon" onClick={scrollTop} />
+      <FaArrowCircleUp className="back-to-top__icon" />
     </div>
   );
 }

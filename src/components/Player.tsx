@@ -3,11 +3,11 @@ import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactPlayer from 'react-player';
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
-import { random } from 'lodash';
 
 import { Context as AppContext } from '../context/AppContext';
 
 import * as soundcloud from '../config/soundCloudTracks';
+import { getImage } from '../utils/utils';
 import Loader from './Loader';
 
 function changeTrack(track: number, direction: string): number {
@@ -16,11 +16,6 @@ function changeTrack(track: number, direction: string): number {
     return track + 1 >= tracks.length ? 0 : track + 1;
   }
   return track - 1 < 0 ? tracks.length - 1 : track - 1;
-}
-
-function getRandomImage(): string {
-  const newNum = random(1, 12);
-  return `${newNum < 10 ? '0' : ''}${newNum}`;
 }
 
 function Player() {
@@ -37,7 +32,7 @@ function Player() {
       <div className="player__container">
         <Loader
           withClasses={['bounceLeft', 'image-width-small']}
-          imageUrl={`images/transparent/ttlf_00${getRandomImage()}.png`}
+          imageUrl={getImage({ rand: true })}
           isOverlay={false}
           message={tracks[chosenTrack].title}
         />

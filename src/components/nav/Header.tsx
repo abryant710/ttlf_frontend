@@ -19,17 +19,20 @@ function Header() {
   } = useContext(AppContext);
 
   const strobe = showPlayer && !showMenu ? 'strobeDownFast' : '';
-
   const history = useHistory();
 
   return (
     <header className={`header ${strobe}`}>
       <div className="header__anchor">
         <div className="header__social-icons">
-          <div onClick={history.goBack} className="header__back-icon">
-            &larr; Back
-          </div>
-          {/* <SocialIcons className="header__icons" size="20px" color="white" /> */}
+          {/* TODO: */}
+          {false ? (
+            <SocialIcons className="header__icons" size="20px" color="white" />
+          ) : (
+            <div onClick={history.goBack} className="header__back-icon">
+              &larr; Back
+            </div>
+          )}
         </div>
         <div className="header__player-minimised">
           {playerMinimised && showPlayer && (

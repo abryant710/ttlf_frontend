@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 function Live() {
   const { t } = useTranslation('common');
-  const [width, height] = [640, 360];
-  let factor = 1;
+  let [width, height] = ['640', '360'];
   if (window.innerWidth < 640) {
-    factor = 0.5;
+    [width, height] = ['320', '180'];
   }
   return (
     <div className="live margin-bottom-footer">
@@ -16,8 +15,8 @@ function Live() {
           <iframe
             title="ttlf_live"
             src="https://embed.restream.io/player/index.html?token=c0ae99a3e8dd7d054296b3e43ac3dd50"
-            width={`${width * factor}px`}
-            height={`${height * factor}px`}
+            width={`${width}px`}
+            height={`${height}px`}
             frameBorder="0"
             allowFullScreen
           />
