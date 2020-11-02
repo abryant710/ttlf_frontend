@@ -17,6 +17,8 @@
       padding: 1rem;
       cursor: pointer;
       text-decoration: underline;
+      word-break: keep-all;
+      width: 200px;
     }
   }
   &__bio {

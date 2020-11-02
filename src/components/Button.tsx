@@ -12,6 +12,6 @@ const Button = ({ text, onClick = () => null, className }: ButtonProps) => {
       {text}
     </p>
   );
-}
+};
 
 export default Button;
