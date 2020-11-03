@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import ReactPlayer from 'react-player';
+import { useTranslation } from 'react-i18next';
 
 import { Context as AppContext } from '../context/AppContext';
 
+import Title from '../components/Title';
 import Loader from '../components/Loader';
 import { urlPrefix, videos } from '../config/youTubeVideos';
 
 function Videos() {
+  const { t } = useTranslation('common');
   const {
     state: { showPlayer },
     turnPlayerOff,
@@ -20,6 +23,7 @@ function Videos() {
   const [videosLoaded, setLoaded] = useState(loadStates);
   return (
     <div className="videos margin-bottom-footer">
+      <Title text={t('videos.title')} />
       {videos.map((video, idx) => {
         const { title, url } = video;
         return (

@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, createRef } from 'react';
 import { shuffle } from 'lodash';
+import { useTranslation } from 'react-i18next';
 
+import Title from '../components/Title';
 import Loader from '../components/Loader';
 import Button from '../components/Button';
 import djProfiles, { residents } from '../config/djProfiles';
@@ -9,6 +11,7 @@ import { getImage, numberUpToMax } from '../utils/utils';
 const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop - 100, behavior: 'smooth' });
 
 function DJProfiles() {
+  const { t } = useTranslation('common');
   const profiles: { [key: string]: { nickname: string; content: Array<string> } } = djProfiles;
   const imgNums = shuffle(Array.from(Array(10).keys())).slice(0, residents.length);
 
@@ -25,9 +28,15 @@ function DJProfiles() {
 
   return (
     <div className="bios margin-bottom-footer">
+      <Title text={t('djProfiles.title')} />
       <div className="bios__buttons">
         {residents.map((resident, resIdx) => (
-          <Button className="bios__buttons--button" onClick={() => scrollToRef(djRefs[resIdx])} text={resident} />
+          <Button
+            key={`${resident}_button`}
+            className="bios__buttons--button"
+            onClick={() => scrollToRef(djRefs[resIdx])}
+            text={resident}
+          />
         ))}
       </div>
       {residents.map((resident, resIdx) => {

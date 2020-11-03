@@ -1,4 +1,5 @@
 import { random } from 'lodash';
+import moment from 'moment';
 
 export const test = null;
 
@@ -19,4 +20,14 @@ export function numberUpToMax(num: number, max: number): number {
     counter -= max;
   }
   return counter;
+}
+
+export function convertDate(dateStr: string): string {
+  const format = 'dddd, Do [of] MMMM';
+  const date = new Date(dateStr);
+  return moment(date).format(format);
+}
+
+export function convertTime(timeStr: string): string {
+  return moment(timeStr, ['HH:mm']).format('h:mm A');
 }
