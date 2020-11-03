@@ -7,7 +7,6 @@
     @include flex-center;
     flex-direction: row;
     text-align: center;
-    margin-top: $header-height;
     flex-wrap: wrap;
     &--button {
       @include paragraph-font;
@@ -16,7 +15,7 @@
       margin: 2px;
       padding: 1rem;
       cursor: pointer;
-      text-decoration: underline;
+      text-decoration: none;
       word-break: keep-all;
       width: 200px;
     }
@@ -24,9 +23,9 @@
   &__bio {
     width: 80%;
     margin-top: 4rem;
-    &:last-of-type {
-      margin-bottom: $footer-height;
-    }
+    // &:last-of-type {
+    //   margin-bottom: $footer-height;
+    // }
     &--title {
       @include big-font;
     }

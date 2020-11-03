@@ -1,0 +1,6 @@
+.title {
+  @include title-font;
+  animation: throb 2s infinite;
+  margin-top: calc(#{$header-height} + 20px);
+  margin-bottom: 20px;
+}

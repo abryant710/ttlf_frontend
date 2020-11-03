@@ -2,8 +2,9 @@
   min-height: $min-page-height;
   min-width: 100vw;
   background-color: $color-white;
-  padding-top: $header-height;
-  @include flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
   text-align: center;
   &__video {
@@ -17,11 +18,6 @@
       border: none;
       margin: 0;
       padding: 0;
-    }
-    &--title {
-      @include big-font;
-      max-width: $live-video-width;
-      margin-bottom: 30px;
     }
   }
 }

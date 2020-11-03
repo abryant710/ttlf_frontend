@@ -1,0 +1,26 @@
+.schedule {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  &__table {
+    margin-bottom: 2rem;
+    & thead tr th {
+      @include big-font;
+      color: $color-secondary;
+      &:hover {
+        background-color: $color-quaternary;
+        color: $color-white;
+      }
+    }
+    & tbody tr td {
+      @include paragraph-font;
+      color: $color-white;
+      background-color: $color-tertiary;
+      padding: 2rem;
+      &:hover {
+        background-color: $color-quaternary;
+        color: $color-white;
+      }
+    }
+  }
+}

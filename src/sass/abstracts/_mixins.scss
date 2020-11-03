@@ -36,6 +36,12 @@
   font-weight: 300;
 }
 
+@mixin title-font {
+  font-size: 6rem;
+  text-align: center;
+  color: $color-primary-dark;
+}
+
 @mixin big-font {
   font-size: 4rem;
   text-align: center;
