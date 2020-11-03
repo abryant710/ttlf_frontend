@@ -16,7 +16,6 @@ function getMenuOptions(t: Function): Array<menuOptionData> {
     { name: t('menu.videos'), route: '/videos' },
     { name: t('menu.djProfiles'), route: '/bios' },
     { name: t('menu.liveSchedule'), route: '/schedule' },
-    // {name: t('menu.mailingList'), route: ''},
   ];
 }
 
@@ -47,12 +46,15 @@ function SiteMenu() {
     state: { showMenu },
     toggleMenu,
     minimisePlayer,
+    showBackButton,
   } = useContext(AppContext);
 
   const history = useHistory();
   function handleClick(route: string): void {
     minimisePlayer();
     toggleMenu();
+    showBackButton();
+    window.scrollTo(0, 0);
     history.push(route);
   }
 
@@ -68,7 +70,7 @@ function SiteMenu() {
           onClick={() => {
             setAnimation(false);
             setTimeout(() => setAnimation(true), 100);
-            setLowestSelected(transitionMenu(lowestSelected, 'down', options.length));
+            setLowestSelected(transitionMenu(lowestSelected, 'up', options.length));
           }}
         />
       )}
@@ -95,7 +97,7 @@ function SiteMenu() {
           onClick={() => {
             setAnimation(false);
             setTimeout(() => setAnimation(true), 100);
-            setLowestSelected(transitionMenu(lowestSelected, 'up', options.length));
+            setLowestSelected(transitionMenu(lowestSelected, 'down', options.length));
           }}
         />
       )}

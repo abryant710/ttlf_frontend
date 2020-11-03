@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, createRef } from 'react';
+import React, { useEffect, createRef } from 'react';
 import { shuffle } from 'lodash';
 import { useTranslation } from 'react-i18next';
 
@@ -19,10 +19,10 @@ function DJProfiles() {
   const [djRefs, setElRefs] = React.useState([]);
 
   useEffect(() => {
-    setElRefs(() =>
+    setElRefs((d) =>
       Array(arrLength)
         .fill(0)
-        .map((_, i) => djRefs[i] || createRef()),
+        .map((_, i) => d[i] || createRef()),
     );
   }, [arrLength]);
 

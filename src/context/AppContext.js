@@ -3,8 +3,14 @@ import createDataContext from './createDataContext';
 const appReducer = (state, { type, payload }) => {
   const { showMenu, showPlayer, playerMinimised } = state;
   switch (type) {
+    case 'hide_back_button':
+      return { ...state, backButtonShown: false };
+    case 'show_back_button':
+      return { ...state, backButtonShown: true };
     case 'toggle_menu':
       return { ...state, showMenu: !showMenu };
+    case 'hide_menu':
+      return { ...state, showMenu: false };
     case 'toggle_player':
       if (showPlayer) {
         return { ...state, showPlayer: !showPlayer, playerMinimised: false };
@@ -33,9 +39,29 @@ const togglePlayer = (dispatch) => () => {
   });
 };
 
+const hideBackButton = (dispatch) => () => {
+  dispatch({
+    type: 'hide_back_button',
+  });
+};
+
+const showBackButton = (dispatch) => () => {
+  dispatch({
+    type: 'show_back_button',
+    payload: true,
+  });
+};
+
 const toggleMenu = (dispatch) => () => {
   dispatch({
     type: 'toggle_menu',
+  });
+};
+
+const hideMenu = (dispatch) => () => {
+  dispatch({
+    type: 'hide_menu',
+    payload: false,
   });
 };
 
@@ -53,6 +79,15 @@ const minimisePlayer = (dispatch) => () => {
 
 export const { Context, Provider } = createDataContext(
   appReducer,
-  { toggleMenu, togglePlayer, toggleMinimisePlayer, turnPlayerOff, minimisePlayer },
-  { showMenu: false, showPlayer: true, playerMinimised: false },
+  {
+    toggleMenu,
+    hideMenu,
+    togglePlayer,
+    toggleMinimisePlayer,
+    turnPlayerOff,
+    minimisePlayer,
+    showBackButton,
+    hideBackButton,
+  },
+  { showMenu: false, showPlayer: true, playerMinimised: false, backButtonShown: false },
 );

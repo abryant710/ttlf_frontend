@@ -12,26 +12,32 @@ import Player from '../Player';
 
 function Header() {
   const {
-    state: { showMenu, showPlayer, playerMinimised },
+    state: { showMenu, showPlayer, playerMinimised, backButtonShown },
     toggleMenu,
     togglePlayer,
     toggleMinimisePlayer,
+    hideMenu,
   } = useContext(AppContext);
 
   const strobe = showPlayer && !showMenu ? 'strobeDownFast' : '';
   const history = useHistory();
 
+  const handleBackClick = () => {
+    window.scrollTo(0, 0);
+    hideMenu();
+    history.goBack();
+  };
+
   return (
     <header className={`header ${strobe}`}>
       <div className="header__anchor">
         <div className="header__social-icons">
-          {/* TODO: */}
-          {false ? (
-            <SocialIcons className="header__icons" size="20px" color="white" />
-          ) : (
-            <div onClick={history.goBack} className="header__back-icon">
+          {backButtonShown ? (
+            <div onClick={handleBackClick} className="header__back-icon">
               &larr; Back
             </div>
+          ) : (
+            <SocialIcons className="header__icons" size="20px" color="white" />
           )}
         </div>
         <div className="header__player-minimised">
