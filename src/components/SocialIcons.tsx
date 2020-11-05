@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaSoundcloud, FaYoutube, FaFacebook, FaTwitch } from 'react-icons/fa';
-import ReactTooltip from 'react-tooltip';
 
 import externalLinks from '../config/externalLinks';
-import { Context as AppContext } from '../context/AppContext';
 
 type SocialIconsProps = {
   className: string;
@@ -14,9 +12,6 @@ type SocialIconsProps = {
 
 function SocialIcons({ className, size, color }: SocialIconsProps) {
   const { t } = useTranslation('common');
-  const {
-    state: { showMenu },
-  } = useContext(AppContext);
   return (
     <div className={className}>
       <a
@@ -55,7 +50,6 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
       >
         <FaTwitch color={color} size={size} />
       </a>
-      <ReactTooltip disable={!!showMenu} />
     </div>
   );
 }

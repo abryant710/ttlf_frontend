@@ -26,6 +26,15 @@
   "live": {
     "title": "Live Stream"
   },
+  "header": {
+    "icons": {
+      "minimisePlayer": "Minimise Player",
+      "controlMusic": "Control Music",
+      "openPlayer": "Open Player",
+      "killMusic": "Kill Music",
+      "openMenu": "Open Menu"
+    }
+  },
   "player": {
     "hide": "Hide player in background"
   },

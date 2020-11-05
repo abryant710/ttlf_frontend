@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
+import { useTranslation } from 'react-i18next';
 import { GiHamburgerMenu, GiSpeakerOff } from 'react-icons/gi';
 import { CgCloseR } from 'react-icons/cg';
 import { BsSpeaker } from 'react-icons/bs';
@@ -19,6 +21,10 @@ function Header() {
     hideMenu,
   } = useContext(AppContext);
 
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  });
+
   const strobe = showPlayer && !showMenu ? 'strobeDownFast' : '';
   const history = useHistory();
 
@@ -27,6 +33,8 @@ function Header() {
     hideMenu();
     history.goBack();
   };
+
+  const { t } = useTranslation('common');
 
   return (
     <header className={`header ${strobe}`}>
@@ -47,6 +55,7 @@ function Header() {
               size="20px"
               color="white"
               onClick={toggleMinimisePlayer}
+              data-tip={t('header.icons.controlMusic')}
             />
           )}
           {!playerMinimised && showPlayer && (
@@ -55,6 +64,7 @@ function Header() {
               size="20px"
               color="white"
               onClick={toggleMinimisePlayer}
+              data-tip={t('header.icons.minimisePlayer')}
             />
           )}
         </div>
@@ -65,6 +75,7 @@ function Header() {
               size="20px"
               color="white"
               onClick={togglePlayer}
+              data-tip={t('header.icons.openPlayer')}
             />
           ) : (
             <GiSpeakerOff
@@ -72,6 +83,7 @@ function Header() {
               size="20px"
               color="white"
               onClick={togglePlayer}
+              data-tip={t('header.icons.killMusic')}
             />
           )}
         </div>
@@ -82,6 +94,7 @@ function Header() {
               size="20px"
               color="white"
               onClick={toggleMenu}
+              data-tip={t('header.icons.openMenu')}
             />
           ) : (
             <CgCloseR className="header__menu-icon pointer rotateY360" size="20px" color="white" onClick={toggleMenu} />
@@ -89,6 +102,7 @@ function Header() {
         </div>
       </div>
       {showPlayer && <Player />}
+      <ReactTooltip disable={!!showMenu} />
     </header>
   );
 }
