@@ -9,11 +9,13 @@ function Home() {
     state: { backButtonShown },
     hideBackButton,
   } = useContext(AppContext);
+
   useEffect(() => {
     if (backButtonShown) {
       hideBackButton();
     }
   });
+
   return (
     <div className="home margin-bottom-footer">
       <Loader withClasses={['loadingAnimation', 'bounceDown']} imageUrl="images/transparent/ttlf_0013.png" isOverlay />
