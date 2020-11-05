@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Title from '../components/Title';
 
 function Live() {
   const { t } = useTranslation('common');
-  let [width, height] = ['640', '360'];
-  if (window.innerWidth < 640) {
-    [width, height] = ['320', '180'];
-  }
+
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  const getWidthOrHeight = (param: string): string => {
+    if (width > 1280) {
+      return param === 'width' ? '1280' : '720';
+    }
+    if (width > 640) {
+      return param === 'width' ? '640' : '360';
+    }
+    return param === 'width' ? '320' : '180';
+  };
+
   return (
     <div className="live margin-bottom-footer">
       <Title text={t('live.title')} />
@@ -17,8 +33,8 @@ function Live() {
           <iframe
             title="ttlf_live"
             src="https://embed.restream.io/player/index.html?token=c0ae99a3e8dd7d054296b3e43ac3dd50"
-            width={`${width}px`}
-            height={`${height}px`}
+            width={`${getWidthOrHeight('width')}px`}
+            height={`${getWidthOrHeight('height')}px`}
             frameBorder="0"
             allowFullScreen
           />
