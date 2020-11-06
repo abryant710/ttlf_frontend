@@ -8,7 +8,7 @@
   flex-direction: column;
   text-align: center;
   &__video {
-    margin: 6rem 2rem;
+    margin: 2rem;
     @include flex-center;
     flex-direction: column;
     &--player {
@@ -18,6 +18,13 @@
       border: none;
       margin: 0;
       padding: 0;
+      &-refresh {
+        margin: 1rem;
+        text-decoration: underline;
+        color: $color-quaternary;
+        cursor: pointer;
+        font-size: large;
+      }
     }
   }
 }
