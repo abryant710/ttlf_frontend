@@ -27,7 +27,7 @@ function Live() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  }, [width, selectedSize]);
 
   const getWidthOrHeight = (param: string): string => {
     const [lw, lh] = largeRes;
