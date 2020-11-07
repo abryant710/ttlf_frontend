@@ -62,6 +62,14 @@
   justify-content: center;
 }
 
+@mixin regular-button($border-color: $color-primary, $text-color: $color-white, $back-color: $color-black) {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $back-color;
+  color: $text-color;
+  padding: .5rem 1rem;
+}
+
 @mixin hover-scale-medium {
   transition: transform .3s linear;
   &:hover {

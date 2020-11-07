@@ -24,7 +24,10 @@
     "title": "DJ Profiles"
   },
   "live": {
-    "title": "Live Stream"
+    "title": "Live Stream",
+    "buttonSmall": "Small",
+    "buttonMedium": "Medium",
+    "buttonLarge": "Large"
   },
   "header": {
     "icons": {

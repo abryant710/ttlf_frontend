@@ -25,6 +25,29 @@
         cursor: pointer;
         font-size: large;
       }
+      &-size {
+        @include flex-center;
+        margin: 2rem;
+        &-s {
+          @include small-font;
+          @include regular-button($color-secondary, $color-white, $color-secondary);
+          margin: 0 1rem;
+        }
+        &-m {
+          @include small-font;
+          @include regular-button($color-tertiary, $color-white, $color-tertiary);
+          margin: 0 1rem;
+        }
+        &-l {
+          @include small-font;
+          @include regular-button($color-quaternary, $color-white, $color-quaternary);
+          margin: 0 1rem;
+        }
+        &-selected {
+          transform: scale(1.2);
+          border-color: $color-black;
+        }
+      }
     }
   }
 }

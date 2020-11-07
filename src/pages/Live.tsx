@@ -3,14 +3,26 @@ import { useTranslation } from 'react-i18next';
 
 import Title from '../components/Title';
 import Loader from '../components/Loader';
+import Button from '../components/Button';
+
+const largeRes = [1280, 720];
+const mediumRes = [640, 360];
+const smallRes = [320, 180];
 
 function Live() {
   const { t } = useTranslation('common');
 
   const [width, setWidth] = useState(window.innerWidth);
+  const [selectedSize, setSelectedSize] = useState('m');
   const [frameRefreshed, refreshFrame] = useState(false);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
+    if (width <= largeRes[0] && selectedSize === 'l') {
+      setSelectedSize('m');
+    }
+    if (width <= mediumRes[0] && selectedSize === 'm') {
+      setSelectedSize('s');
+    }
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -18,13 +30,16 @@ function Live() {
   });
 
   const getWidthOrHeight = (param: string): string => {
-    if (width > 1280) {
-      return param === 'width' ? '1280' : '720';
+    const [lw, lh] = largeRes;
+    if (width > lw && selectedSize === 'l') {
+      return param === 'width' ? lw.toString() : lh.toString();
     }
-    if (width > 640) {
-      return param === 'width' ? '640' : '360';
+    const [mw, mh] = mediumRes;
+    if (width > mw && selectedSize === 'm') {
+      return param === 'width' ? mw.toString() : mh.toString();
     }
-    return param === 'width' ? '400' : '300';
+    const [sw, sh] = smallRes;
+    return param === 'width' ? sw.toString() : sh.toString();
   };
 
   const reloadIframeWidget = (): void => {
@@ -42,6 +57,35 @@ function Live() {
           <p className="live__video--player-refresh" onClick={reloadIframeWidget}>
             Refresh stream?
           </p>
+          <div className="live__video--player-size">
+            {width > mediumRes[0] && (
+              <Button
+                className={`live__video--player-size-s ${
+                  selectedSize === 's' ? 'live__video--player-size-selected' : ''
+                }`}
+                onClick={() => setSelectedSize('s')}
+                text={t('live.buttonSmall')}
+              />
+            )}
+            {width > mediumRes[0] && (
+              <Button
+                className={`live__video--player-size-m ${
+                  selectedSize === 'm' ? 'live__video--player-size-selected' : ''
+                }`}
+                onClick={() => setSelectedSize('m')}
+                text={t('live.buttonMedium')}
+              />
+            )}
+            {width > largeRes[0] && (
+              <Button
+                className={`live__video--player-size-l ${
+                  selectedSize === 'l' ? 'live__video--player-size-selected' : ''
+                }`}
+                onClick={() => setSelectedSize('l')}
+                text={t('live.buttonLarge')}
+              />
+            )}
+          </div>
           {!frameRefreshed ? (
             <iframe
               title="ttlf_live"
