@@ -56,7 +56,7 @@ function Live() {
           )}
           <p>
             Powered by
-            <a target="_blank" href="https://www.twitch.tv/">
+            <a target="_blank" href="https://www.twitch.tv/" rel="noopener noreferrer">
               {' '}
               Twitch.tv
             </a>
