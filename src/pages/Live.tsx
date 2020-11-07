@@ -24,7 +24,7 @@ function Live() {
     if (width > 640) {
       return param === 'width' ? '640' : '360';
     }
-    return param === 'width' ? '320' : '180';
+    return param === 'width' ? '400' : '300';
   };
 
   const reloadIframeWidget = (): void => {
@@ -45,7 +45,7 @@ function Live() {
           {!frameRefreshed ? (
             <iframe
               title="ttlf_live"
-              src="https://embed.restream.io/player/index.html?token=c0ae99a3e8dd7d054296b3e43ac3dd50"
+              src={`https://player.twitch.tv/?channel=ttlf001&parent=${window.location.hostname}&autoplay=true`}
               width={`${getWidthOrHeight('width')}px`}
               height={`${getWidthOrHeight('height')}px`}
               frameBorder="0"
@@ -56,7 +56,10 @@ function Live() {
           )}
           <p>
             Powered by
-            <a href="https://restream.io"> Restream.io</a>
+            <a target="_blank" href="https://www.twitch.tv/">
+              {' '}
+              Twitch.tv
+            </a>
           </p>
         </div>
       </div>

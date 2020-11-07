@@ -1,17 +1,42 @@
 export default [
   {
-    dj: 'Jonni Bryant',
+    dj: 'Chris James',
     date: '2020-11-07',
-    time: '14:00',
+    time: '17:30',
   },
   {
-    dj: 'Chris James',
-    date: '2020-11-08',
-    time: '16:00',
+    dj: 'Jonni Bryant',
+    date: '2020-11-07',
+    time: '18:30',
   },
   {
     dj: 'Josh Brown',
-    date: '2020-11-08',
-    time: '18:00',
+    date: '2020-11-07',
+    time: '19:30',
+  },
+  {
+    dj: 'Melon',
+    date: '2020-11-07',
+    time: '20:30',
+  },
+  {
+    dj: 'Chris James',
+    date: '2020-18-07',
+    time: '17:30',
+  },
+  {
+    dj: 'Jonni Bryant',
+    date: '2020-18-07',
+    time: '18:30',
+  },
+  {
+    dj: 'Josh Brown',
+    date: '2020-18-07',
+    time: '19:30',
+  },
+  {
+    dj: 'Melon',
+    date: '2020-18-07',
+    time: '20:30',
   },
 ];
