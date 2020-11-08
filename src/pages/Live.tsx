@@ -101,7 +101,7 @@ function Live() {
                 frameBorder="0"
                 scrolling="no"
                 id="chat_embed"
-                src={`https://www.twitch.tv/embed/hebo/chat?channel=ttlf001&parent=${window.location.hostname}`}
+                src={`https://www.twitch.tv/embed/ttlf001/chat?parent=${window.location.hostname}`}
                 width={`${getWidthOrHeight('width')}px`}
                 height={`${getWidthOrHeight('height')}px`}
               />
