@@ -6,13 +6,17 @@ import Loader from '../components/Loader';
 
 function Home() {
   const {
-    state: { backButtonShown },
+    state: { backButtonShown, showPlayer },
     hideBackButton,
+    turnPlayerOff,
   } = useContext(AppContext);
 
   useEffect(() => {
     if (backButtonShown) {
       hideBackButton();
+    }
+    if (!showPlayer) {
+      turnPlayerOff(false);
     }
   });
 

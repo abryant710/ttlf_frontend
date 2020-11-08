@@ -3,24 +3,26 @@ import createDataContext from './createDataContext';
 const appReducer = (state, { type, payload }) => {
   const { showMenu, showPlayer, playerMinimised } = state;
   switch (type) {
-    case 'hide_back_button':
+    case 'HIDE_BACK_BUTTON':
       return { ...state, backButtonShown: false };
-    case 'show_back_button':
+    case 'SHOW_BACK_BUTTON':
       return { ...state, backButtonShown: true };
-    case 'toggle_menu':
+    case 'TOGGLE_MENU':
       return { ...state, showMenu: !showMenu };
-    case 'hide_menu':
+    case 'HIDE_MENU':
       return { ...state, showMenu: false };
-    case 'toggle_player':
+    case 'TOGGLE_PLAYER':
       if (showPlayer) {
         return { ...state, showPlayer: !showPlayer, playerMinimised: false };
       }
       return { ...state, showPlayer: !showPlayer };
-    case 'player_off':
+    case 'PLAYER_OFF':
       return { ...state, showPlayer: false, playerMinimised: false };
-    case 'toggle_minimise_player':
+    case 'PLAYER_ON':
+      return { ...state, showPlayer: true, playerMinimised: false };
+    case 'TOGGLE_MINIMISE_PLAYER':
       return { ...state, playerMinimised: !playerMinimised };
-    case 'minimise_player':
+    case 'MINIMISE_PLAYER':
       return { ...state, playerMinimised: true };
     default:
       return state;
@@ -29,51 +31,51 @@ const appReducer = (state, { type, payload }) => {
 
 const toggleMinimisePlayer = (dispatch) => () => {
   dispatch({
-    type: 'toggle_minimise_player',
+    type: 'TOGGLE_MINIMISE_PLAYER',
   });
 };
 
 const togglePlayer = (dispatch) => () => {
   dispatch({
-    type: 'toggle_player',
+    type: 'TOGGLE_PLAYER',
   });
 };
 
 const hideBackButton = (dispatch) => () => {
   dispatch({
-    type: 'hide_back_button',
+    type: 'HIDE_BACK_BUTTON',
   });
 };
 
 const showBackButton = (dispatch) => () => {
   dispatch({
-    type: 'show_back_button',
+    type: 'SHOW_BACK_BUTTON',
     payload: true,
   });
 };
 
 const toggleMenu = (dispatch) => () => {
   dispatch({
-    type: 'toggle_menu',
+    type: 'TOGGLE_MENU',
   });
 };
 
 const hideMenu = (dispatch) => () => {
   dispatch({
-    type: 'hide_menu',
+    type: 'HIDE_MENU',
     payload: false,
   });
 };
 
-const turnPlayerOff = (dispatch) => () => {
+const turnPlayerOff = (dispatch) => onOff => {
   dispatch({
-    type: 'player_off',
+    type: onOff ? 'PLAYER_OFF' : 'PLAYER_ON',
   });
 };
 
 const minimisePlayer = (dispatch) => () => {
   dispatch({
-    type: 'minimise_player',
+    type: 'MINIMISE_PLAYER',
   });
 };
 
@@ -89,5 +91,5 @@ export const { Context, Provider } = createDataContext(
     showBackButton,
     hideBackButton,
   },
-  { showMenu: false, showPlayer: true, playerMinimised: false, backButtonShown: false },
+  { showMenu: false, showPlayer: false, playerMinimised: false, backButtonShown: false },
 );

@@ -49,7 +49,7 @@ function Videos() {
                   setLoaded({ ...videosLoaded, [`video_${idx}`]: true });
                 }}
                 onPlay={() => {
-                  turnPlayerOff();
+                  turnPlayerOff(true);
                   changeVideoPlaying(idx);
                 }}
                 playing={!showPlayer && videoPlaying === idx}
