@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
 import { Context as AppContext } from '../context/AppContext';
@@ -10,6 +11,7 @@ import CustomToast from '../components/CustomToast';
 let initalLoad = true;
 
 function Home() {
+  const { t } = useTranslation('common');
   const {
     state: { backButtonShown, showPlayer },
     hideBackButton,
@@ -25,10 +27,10 @@ function Home() {
       initalLoad = false;
       toast.info(
         <CustomToast
-          headerText="We have an upcoming event!"
+          headerText={t('home.events.message')}
           link={{
             route: '/schedule',
-            text: 'Click here to find out more',
+            text: t('home.events.linkText'),
           }}
         />,
       );

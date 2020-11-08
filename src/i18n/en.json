@@ -12,10 +12,16 @@
     "mailingList": "Mailing List"
   },
   "home": {
-    "title": "Trip the Light Fantastic"
+    "title": "Trip the Light Fantastic",
+    "events": {
+      "message": "We've got an upcoming event!",
+      "linkText": "Click here to find out more"
+    }
   },
   "schedule": {
-    "title": "Live schedule"
+    "title": "Live schedule",
+    "buttonUpComing": "Up Coming",
+    "buttonAll": "All"
   },
   "videos": {
     "title": "Videos"

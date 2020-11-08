@@ -2,11 +2,35 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
+  &__buttons {
+    @include flex-center;
+    margin: 2rem;
+    &-up-coming {
+      @include small-font;
+      @include regular-button($color-secondary, $color-white, $color-secondary);
+      margin: 0 1rem;
+    }
+    &-all {
+      @include small-font;
+      @include regular-button($color-tertiary, $color-white, $color-tertiary);
+      margin: 0 1rem;
+    }
+    &-selected {
+      transform: scale(1.2) !important;
+      border-color: $color-black;
+    }
+  }
+  &__up-coming {
+    width: 95%;
+    max-width: 800px;
+    height: auto;
+    margin: 1rem;
+  }
   &__table {
     margin-bottom: 2rem;
     & thead tr th {
       @include big-font;
-      color: $color-secondary;
+      color: $color-quaternary;
       &:hover {
         background-color: $color-quaternary;
         color: $color-white;
@@ -15,11 +39,22 @@
     & tbody tr td {
       @include paragraph-font;
       color: $color-white;
-      background-color: $color-tertiary;
       padding: 2rem;
-      &:hover {
-        background-color: $color-quaternary;
-        color: $color-white;
+    }
+    &--row {
+      &-odd {
+        background-color: $color-tertiary;
+        & td:hover {
+          background-color: $color-white;
+          color: $color-tertiary;
+        }
+      }
+      &-even {
+        background-color: $color-secondary;
+        & td:hover {
+          background-color: $color-white;
+          color: $color-secondary;
+        }
       }
     }
   }
