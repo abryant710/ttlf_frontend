@@ -1,0 +1,20 @@
+.Toastify__toast {
+  background-color: $color-secondary-dark !important;
+}
+.Toastify__toast-container--top-right {
+  top: 0;
+  right: 0;
+}
+
+.toast {
+  text-align: center;
+  &__header {
+    margin: 1rem;
+    font-size: 14px;
+  }
+  &__link {
+    margin: 1rem;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}

@@ -1,8 +1,13 @@
 import React, { useEffect, useContext } from 'react';
+import { toast } from 'react-toastify';
 
 import { Context as AppContext } from '../context/AppContext';
 
 import Loader from '../components/Loader';
+import CustomToast from '../components/CustomToast';
+
+// TODO: possibly add this to context as initial page load could be elsewhere
+let initalLoad = true;
 
 function Home() {
   const {
@@ -15,8 +20,18 @@ function Home() {
     if (backButtonShown) {
       hideBackButton();
     }
-    if (!showPlayer) {
+    if (!showPlayer && initalLoad) {
       turnPlayerOff(false);
+      initalLoad = false;
+      toast.info(
+        <CustomToast
+          headerText="We have an upcoming event!"
+          link={{
+            route: '/schedule',
+            text: 'Click here to find out more',
+          }}
+        />,
+      );
     }
   });
 

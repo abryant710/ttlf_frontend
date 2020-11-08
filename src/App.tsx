@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './pages/Home';
 import DJProfiles from './pages/DJProfiles';
@@ -27,6 +29,7 @@ function App() {
       </Switch>
       <Footer />
       <BackToTop />
+      <ToastContainer autoClose={10000} hideProgressBar={true} draggable={false} transition={Zoom} />
     </Router>
   );
 }
