@@ -25,6 +25,13 @@
         cursor: pointer;
         font-size: large;
       }
+      &-content {
+        @include flex-center;
+        flex-direction: column;
+        & iframe {
+          margin: 2rem 0;
+        }
+      }
       &-size {
         @include flex-center;
         margin: 2rem;

@@ -87,14 +87,25 @@ function Live() {
             )}
           </div>
           {!frameRefreshed ? (
-            <iframe
-              title="ttlf_live"
-              src={`https://player.twitch.tv/?channel=ttlf001&parent=${window.location.hostname}&autoplay=true`}
-              width={`${getWidthOrHeight('width')}px`}
-              height={`${getWidthOrHeight('height')}px`}
-              frameBorder="0"
-              allowFullScreen
-            />
+            <div className="live__video--player-content">
+              <iframe
+                title="ttlf_live"
+                src={`https://player.twitch.tv/?channel=ttlf001&parent=${window.location.hostname}&autoplay=true`}
+                width={`${getWidthOrHeight('width')}px`}
+                height={`${getWidthOrHeight('height')}px`}
+                frameBorder="0"
+                allowFullScreen
+              />
+              <iframe
+                title="ttlf_live_chat"
+                frameBorder="0"
+                scrolling="no"
+                id="chat_embed"
+                src={`https://www.twitch.tv/embed/hebo/chat?channel=ttlf001&parent=${window.location.hostname}`}
+                width={`${getWidthOrHeight('width')}px`}
+                height={`${getWidthOrHeight('height')}px`}
+              />
+            </div>
           ) : (
             <Loader showSpinner withClasses={['loadingAnimation', 'margin-top-medium', 'margin-bottom-medium']} />
           )}
