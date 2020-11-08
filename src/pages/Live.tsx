@@ -97,6 +97,7 @@ function Live() {
                 allowFullScreen
               />
               <iframe
+                className="live__video--player-chat"
                 title="ttlf_live_chat"
                 frameBorder="0"
                 scrolling="no"
@@ -105,17 +106,17 @@ function Live() {
                 width={`${getWidthOrHeight('width')}px`}
                 height={`${getWidthOrHeight('height')}px`}
               />
+              <p>
+                Powered by
+                <a target="_blank" href="https://www.twitch.tv/" rel="noopener noreferrer">
+                  {' '}
+                  Twitch.tv
+                </a>
+              </p>
             </div>
           ) : (
             <Loader showSpinner withClasses={['loadingAnimation', 'margin-top-medium', 'margin-bottom-medium']} />
           )}
-          <p>
-            Powered by
-            <a target="_blank" href="https://www.twitch.tv/" rel="noopener noreferrer">
-              {' '}
-              Twitch.tv
-            </a>
-          </p>
         </div>
       </div>
     </div>

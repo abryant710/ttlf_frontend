@@ -67,6 +67,14 @@
       &--title {
         font-size: 2rem;
       }
+      &--player {
+        &-content {
+          padding-bottom: calc(#{$footer-height} + 20px);
+        }
+        &-chat {
+          min-height: 400px;
+        }
+      }
     }
   }
 }
