@@ -10,6 +10,12 @@
   align-items: center;
 }
 
+.btn-base {
+  word-break: keep-all;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .hidden {
   visibility: hidden;
 }

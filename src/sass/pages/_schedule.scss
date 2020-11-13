@@ -5,13 +5,12 @@
   &__buttons {
     @include flex-center;
     margin: 2rem;
+    @include small-font;
     &-up-coming {
-      @include small-font;
       @include regular-button($color-secondary, $color-white, $color-secondary);
       margin: 0 1rem;
     }
     &-all {
-      @include small-font;
       @include regular-button($color-tertiary, $color-white, $color-tertiary);
       margin: 0 1rem;
     }
@@ -45,15 +44,15 @@
       &-odd {
         background-color: $color-tertiary;
         & td:hover {
-          background-color: $color-white;
-          color: $color-tertiary;
+          color: $color-white;
+          background-color: $color-quaternary;
         }
       }
       &-even {
         background-color: $color-secondary;
         & td:hover {
-          background-color: $color-white;
-          color: $color-secondary;
+          color: $color-white;
+          background-color: $color-quaternary;
         }
       }
     }
