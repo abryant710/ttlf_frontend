@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { GiHamburgerMenu, GiSpeakerOff } from 'react-icons/gi';
 import { CgCloseR } from 'react-icons/cg';
 import { BsSpeaker } from 'react-icons/bs';
+import { SiFacebooklive } from 'react-icons/si';
 import { RiSlideshow3Fill } from 'react-icons/ri';
 import { BiMinus } from 'react-icons/bi';
 import { useHistory } from 'react-router-dom';
@@ -19,6 +20,7 @@ function Header() {
     togglePlayer,
     toggleMinimisePlayer,
     hideMenu,
+    minimisePlayer,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -34,6 +36,13 @@ function Header() {
     history.goBack();
   };
 
+  const handleGoLiveClick = () => {
+    window.scrollTo(0, 0);
+    hideMenu();
+    minimisePlayer();
+    history.push('/live');
+  };
+
   const { t } = useTranslation('common');
 
   return (
@@ -45,8 +54,8 @@ function Header() {
               &larr; Back
             </div>
           ) : (
-            <SocialIcons className="header__icons" size="20px" color="white" />
-          )}
+              <SocialIcons className="header__icons" size="20px" color="white" />
+            )}
         </div>
         <div className="header__player-minimised">
           {playerMinimised && showPlayer && (
@@ -78,14 +87,23 @@ function Header() {
               data-tip={t('header.icons.openPlayer')}
             />
           ) : (
-            <GiSpeakerOff
-              className="header__menu-icon pointer rotateX360"
-              size="20px"
-              color="white"
-              onClick={togglePlayer}
-              data-tip={t('header.icons.killMusic')}
-            />
-          )}
+              <GiSpeakerOff
+                className="header__menu-icon pointer rotateX360"
+                size="20px"
+                color="white"
+                onClick={togglePlayer}
+                data-tip={t('header.icons.killMusic')}
+              />
+            )}
+        </div>
+        <div className="header__watch-live">
+          <SiFacebooklive
+            className="header__menu-icon pointer rotateY720"
+            size="20px"
+            color="white"
+            onClick={handleGoLiveClick}
+            data-tip={t('header.icons.watchLive')}
+          />
         </div>
         <div className="header__burger">
           {!showMenu ? (
@@ -97,8 +115,8 @@ function Header() {
               data-tip={t('header.icons.openMenu')}
             />
           ) : (
-            <CgCloseR className="header__menu-icon pointer rotateY360" size="20px" color="white" onClick={toggleMenu} />
-          )}
+              <CgCloseR className="header__menu-icon pointer rotateY360" size="20px" color="white" onClick={toggleMenu} />
+            )}
         </div>
       </div>
       {showPlayer && <Player />}

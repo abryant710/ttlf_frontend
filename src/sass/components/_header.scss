@@ -41,6 +41,9 @@
   &__player {
     @include header-icon;
   }
+  &__watch-live {
+    @include header-icon;
+  }
   &__burger {
     @include header-icon;
   }

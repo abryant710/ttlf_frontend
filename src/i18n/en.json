@@ -37,6 +37,7 @@
   },
   "header": {
     "icons": {
+      "watchLive": "Watch us Live!",
       "minimisePlayer": "Minimise Player",
       "controlMusic": "Control Music",
       "openPlayer": "Open Player",
