@@ -54,8 +54,8 @@ function Header() {
               &larr; Back
             </div>
           ) : (
-              <SocialIcons className="header__icons" size="20px" color="white" />
-            )}
+            <SocialIcons className="header__icons" size="20px" color="white" />
+          )}
         </div>
         <div className="header__player-minimised">
           {playerMinimised && showPlayer && (
@@ -87,14 +87,14 @@ function Header() {
               data-tip={t('header.icons.openPlayer')}
             />
           ) : (
-              <GiSpeakerOff
-                className="header__menu-icon pointer rotateX360"
-                size="20px"
-                color="white"
-                onClick={togglePlayer}
-                data-tip={t('header.icons.killMusic')}
-              />
-            )}
+            <GiSpeakerOff
+              className="header__menu-icon pointer rotateX360"
+              size="20px"
+              color="white"
+              onClick={togglePlayer}
+              data-tip={t('header.icons.killMusic')}
+            />
+          )}
         </div>
         <div className="header__watch-live">
           <SiFacebooklive
@@ -115,8 +115,8 @@ function Header() {
               data-tip={t('header.icons.openMenu')}
             />
           ) : (
-              <CgCloseR className="header__menu-icon pointer rotateY360" size="20px" color="white" onClick={toggleMenu} />
-            )}
+            <CgCloseR className="header__menu-icon pointer rotateY360" size="20px" color="white" onClick={toggleMenu} />
+          )}
         </div>
       </div>
       {showPlayer && <Player />}
