@@ -25,6 +25,10 @@
     height: auto;
     margin: 1rem;
   }
+  &__no-up-coming {
+    text-align: center;
+    @include paragraph-font;
+  }
   &__table {
     margin-bottom: 2rem;
     & thead tr th {
