@@ -1,8 +1,6 @@
 import { random } from 'lodash';
 import moment from 'moment';
 
-export const test = null;
-
 export function getImage({ num, rand }: { num?: number; rand?: boolean }): string {
   if (rand) {
     const newNum = random(1, 12);
