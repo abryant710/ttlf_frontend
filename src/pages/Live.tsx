@@ -57,7 +57,12 @@ function Live() {
   return (
     <div className="live margin-bottom-footer">
       <Title text={t('live.title')} />
-      {liveNow && <h3 className="bounceDown live-subtitle">{`${currentLiveDj} ${t('live.liveNow')}`}</h3>}
+      {liveNow && (
+        <h3 className="live-subtitle">
+          <span className="flash">{currentLiveDj}</span>
+          {` ${t('live.liveNow')}`}
+        </h3>
+      )}
       <div className="live__video">
         <div className="live__video--player">
           <p className="live__video--player-refresh" onClick={reloadIframeWidget}>

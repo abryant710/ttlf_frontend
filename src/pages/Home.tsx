@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import getSiteConfig from '../api/adminApi';
 
 import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
@@ -22,18 +21,6 @@ const showEventToast = (t: (trans: string) => string) => {
   );
 };
 
-const showErrorToast = (t: (trans: string) => string) => {
-  toast.error(
-    <CustomToast
-      headerText={t('home.loadError.message')}
-      link={{
-        route: '/',
-        text: t('home.loadError.linkText'),
-      }}
-    />,
-  );
-};
-
 function Home() {
   const { t } = useTranslation('common');
   const history = useHistory();
@@ -44,7 +31,6 @@ function Home() {
   } = useContext(AppContext);
   const {
     state: { liveNow, upcomingEvent },
-    loadFetchedContent,
   } = useContext(ContentContext);
 
   useEffect(() => {
@@ -57,17 +43,6 @@ function Home() {
       turnPlayerOff(false);
     }
   }, [liveNow, upcomingEvent]);
-
-  useEffect(() => {
-    getSiteConfig().then((res) => {
-      const { status } = res;
-      if (status === 'success') {
-        loadFetchedContent(res);
-      } else {
-        showErrorToast(t);
-      }
-    });
-  }, []);
 
   useEffect(() => {
     if (backButtonShown) {

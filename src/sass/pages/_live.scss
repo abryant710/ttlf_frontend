@@ -10,6 +10,7 @@
   &-subtitle {
     @include big-font;
     text-align: center;
+    color: $color-primary;
   }
   &__video {
     margin: 2rem;

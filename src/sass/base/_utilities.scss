@@ -21,6 +21,14 @@
   visibility: hidden;
 }
 
+.throb {
+  animation: throb 2s infinite;
+} 
+
+.throbTilt {
+  animation: throbTilt 2s infinite;
+} 
+
 .strobeUpFast {
   animation: strobeUp 1s infinite;
 } 
@@ -37,6 +45,10 @@
 .strobeDownSlow {
   animation: strobeDown 100s infinite;
   transition: all 2s;
+}
+
+.flash {
+  animation: flash 3s infinite;
 }
 
 .bounceDown {
