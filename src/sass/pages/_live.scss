@@ -7,6 +7,10 @@
   justify-content: flex-start;
   flex-direction: column;
   text-align: center;
+  &-subtitle {
+    @include big-font;
+    text-align: center;
+  }
   &__video {
     margin: 2rem;
     @include flex-center;

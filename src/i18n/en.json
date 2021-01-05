@@ -36,6 +36,7 @@
   },
   "live": {
     "title": "Live Stream",
+    "liveNow": "is live now!",
     "buttonSmall": "Small",
     "buttonMedium": "Medium",
     "buttonLarge": "Large"

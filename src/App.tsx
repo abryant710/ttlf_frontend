@@ -20,11 +20,11 @@ function App() {
       <Header />
       <SiteMenu />
       <Switch>
-        <Route path="/" exact component={Home} />
         <Route path="/bios" exact component={DJProfiles} />
         <Route path="/videos" exact component={Videos} />
         <Route path="/schedule" exact component={Schedule} />
         <Route path="/live" exact component={Live} />
+        <Route path="/" exact component={Home} />
         <Redirect to="/" />
       </Switch>
       <Footer />

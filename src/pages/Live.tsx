@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Context as ContentContext } from '../context/ContentContext';
 
 import Title from '../components/Title';
 import Loader from '../components/Loader';
@@ -11,6 +13,9 @@ const smallRes = [320, 180];
 
 function Live() {
   const { t } = useTranslation('common');
+  const {
+    state: { liveNow, currentLiveDj },
+  } = useContext(ContentContext);
 
   const [width, setWidth] = useState(window.innerWidth);
   const [selectedSize, setSelectedSize] = useState('m');
@@ -52,6 +57,7 @@ function Live() {
   return (
     <div className="live margin-bottom-footer">
       <Title text={t('live.title')} />
+      {liveNow && <h3 className="bounceDown live-subtitle">{`${currentLiveDj} ${t('live.liveNow')}`}</h3>}
       <div className="live__video">
         <div className="live__video--player">
           <p className="live__video--player-refresh" onClick={reloadIframeWidget}>
@@ -60,27 +66,24 @@ function Live() {
           <div className="live__video--player-size">
             {width > mediumRes[0] && (
               <Button
-                className={`live__video--player-size-s ${
-                  selectedSize === 's' ? 'live__video--player-size-selected' : ''
-                }`}
+                className={`live__video--player-size-s ${selectedSize === 's' ? 'live__video--player-size-selected' : ''
+                  }`}
                 onClick={() => setSelectedSize('s')}
                 text={t('live.buttonSmall')}
               />
             )}
             {width > mediumRes[0] && (
               <Button
-                className={`live__video--player-size-m ${
-                  selectedSize === 'm' ? 'live__video--player-size-selected' : ''
-                }`}
+                className={`live__video--player-size-m ${selectedSize === 'm' ? 'live__video--player-size-selected' : ''
+                  }`}
                 onClick={() => setSelectedSize('m')}
                 text={t('live.buttonMedium')}
               />
             )}
             {width > largeRes[0] && (
               <Button
-                className={`live__video--player-size-l ${
-                  selectedSize === 'l' ? 'live__video--player-size-selected' : ''
-                }`}
+                className={`live__video--player-size-l ${selectedSize === 'l' ? 'live__video--player-size-selected' : ''
+                  }`}
                 onClick={() => setSelectedSize('l')}
                 text={t('live.buttonLarge')}
               />
@@ -115,8 +118,8 @@ function Live() {
               </p>
             </div>
           ) : (
-            <Loader showSpinner withClasses={['loadingAnimation', 'margin-top-medium', 'margin-bottom-medium']} />
-          )}
+              <Loader showSpinner withClasses={['loadingAnimation', 'margin-top-medium', 'margin-bottom-medium']} />
+            )}
         </div>
       </div>
     </div>
