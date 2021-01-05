@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Context as ContentContext } from '../context/ContentContext';
 
 import Title from '../components/Title';
 import Button from '../components/Button';
@@ -8,8 +10,22 @@ import { convertDate, convertTime } from '../utils/utils';
 
 function Schedule() {
   const { t } = useTranslation('common');
+  const {
+    state: { upcomingEvent },
+  } = useContext(ContentContext);
 
-  const [tabShown, changeTab] = useState('upComing');
+  const defaultState = upcomingEvent ? 'upComing' : 'all';
+  const [tabShown, changeTab] = useState(defaultState);
+
+  const getUpComingContent = (event: string) => {
+    if (event) {
+      return (
+        // TODO: use dynamic content here to add a flyer
+        <img src="/images/flyers/event_2020_11_28.jpeg" alt="Up and coming event" className="schedule__up-coming" />
+      );
+    }
+    return <h4 className="schedule__no-up-coming">{t('schedule.noEvent')}</h4>;
+  };
 
   return (
     <div className="schedule margin-bottom-footer">
@@ -26,9 +42,7 @@ function Schedule() {
           text={t('schedule.buttonAll')}
         />
       </div>
-      {tabShown === 'upComing' && (
-        <img src="/images/flyers/event_2020_11_28.jpeg" alt="Up and coming event" className="schedule__up-coming" />
-      )}
+      {tabShown === 'upComing' && getUpComingContent(upcomingEvent)}
       {tabShown === 'all' && (
         <table className="schedule__table">
           <thead>
