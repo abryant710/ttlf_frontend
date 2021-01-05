@@ -67,7 +67,7 @@ const hideMenu = (dispatch) => () => {
   });
 };
 
-const turnPlayerOff = (dispatch) => onOff => {
+const turnPlayerOff = (dispatch) => (onOff) => {
   dispatch({
     type: onOff ? 'PLAYER_OFF' : 'PLAYER_ON',
   });
