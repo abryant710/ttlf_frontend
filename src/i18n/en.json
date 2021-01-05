@@ -16,12 +16,17 @@
     "events": {
       "message": "We've got an upcoming event!",
       "linkText": "Click here to find out more"
+    },
+    "loadError": {
+      "message": "The site failed to load data.",
+      "linkText": "Please reload"
     }
   },
   "schedule": {
     "title": "Live schedule",
     "buttonUpComing": "Up Coming",
-    "buttonAll": "All"
+    "buttonAll": "All",
+    "noEvent": "We don't have an up coming event currently. Stay posted."
   },
   "videos": {
     "title": "Videos"
