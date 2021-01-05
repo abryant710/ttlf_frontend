@@ -3,31 +3,35 @@ import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactPlayer from 'react-player';
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
+import { shuffle } from 'lodash';
 
+import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
 
-import * as soundcloud from '../config/soundCloudTracks';
 import { getImage } from '../utils/utils';
 import Loader from './Loader';
 import Button from './Button';
 
-function changeTrack(track: number, direction: string): number {
-  const { tracks } = soundcloud;
-  if (direction === 'fwd') {
-    return track + 1 >= tracks.length ? 0 : track + 1;
-  }
-  return track - 1 < 0 ? tracks.length - 1 : track - 1;
-}
-
 function Player() {
+  const {
+    state: { soundcloudTrackPrefix, soundcloudTracks, soundcloudTracksRandomised, contentLoaded },
+  } = useContext(ContentContext);
+  const tracks = soundcloudTracksRandomised ? shuffle(soundcloudTracks) : soundcloudTracks;
   const {
     state: { playerMinimised },
     toggleMinimisePlayer,
   } = useContext(AppContext);
   const { t } = useTranslation('common');
-  const { tracks, urlPrefix } = soundcloud;
   const [chosenTrack, updateTrack] = useState(0);
   const [hasLoaded, hideLoadingSpinner] = useState(false);
+
+  const changeTrack = (track: number, direction: string): number => {
+    if (direction === 'fwd') {
+      return track + 1 >= tracks.length ? 0 : track + 1;
+    }
+    return track - 1 < 0 ? tracks.length - 1 : track - 1;
+  };
+
   return (
     <div className={`player ${playerMinimised ? 'hidden' : ''}`}>
       <div className="player__container">
@@ -47,7 +51,7 @@ function Player() {
             />
           </div>
           <ReactPlayer
-            url={`${urlPrefix}${tracks[chosenTrack].url}`}
+            url={`${soundcloudTrackPrefix}${tracks[chosenTrack].url}`}
             width="70%"
             height="120px"
             config={{
