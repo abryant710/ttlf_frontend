@@ -1,11 +1,13 @@
-import React, { useEffect, createRef } from 'react';
+import React, { useEffect, createRef, useContext } from 'react';
 import { shuffle } from 'lodash';
 import { useTranslation } from 'react-i18next';
+
+import { Context as ContentContext } from '../context/ContentContext';
 
 import Title from '../components/Title';
 import Loader from '../components/Loader';
 import Button from '../components/Button';
-import djProfiles, { residents } from '../config/djProfiles';
+import { DjBio } from '../types';
 import { getImage, numberUpToMax } from '../utils/utils';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -13,7 +15,10 @@ const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop -
 
 function DJProfiles() {
   const { t } = useTranslation('common');
-  const profiles: { [key: string]: { nickname: string; content: Array<string> } } = djProfiles;
+  const {
+    state: { djProfiles },
+  } = useContext(ContentContext);
+  const residents = djProfiles.map((profile: DjBio) => profile.name);
   const imgNums = shuffle(Array.from(Array(10).keys())).slice(0, residents.length);
 
   const arrLength = residents.length;
@@ -31,7 +36,7 @@ function DJProfiles() {
     <div className="bios margin-bottom-footer">
       <Title text={t('djProfiles.title')} />
       <div className="bios__buttons">
-        {residents.map((resident, resIdx) => (
+        {residents.map((resident: string, resIdx: number) => (
           <Button
             key={`${resident}_button`}
             className="bios__buttons--button"
@@ -40,8 +45,8 @@ function DJProfiles() {
           />
         ))}
       </div>
-      {residents.map((resident, resIdx) => {
-        const { nickname, content } = profiles[resident];
+      {residents.map((resident: string, resIdx: number) => {
+        const { nickname, bio } = djProfiles.find((profile: DjBio) => profile.name === resident);
         return (
           <div className="bios__bio" key={resident} ref={djRefs[resIdx]}>
             <h1 className="bios__bio--title">{resident}</h1>
@@ -57,7 +62,7 @@ function DJProfiles() {
               isOverlay={false}
               message=""
             />
-            {content.map((para, paraIdx) => {
+            {bio.map((para: string, paraIdx: number) => {
               return (
                 <p
                   className={`bios__bio--paragraph bios__bio--paragraph-${numberUpToMax(paraIdx + 1, 4)}`}
