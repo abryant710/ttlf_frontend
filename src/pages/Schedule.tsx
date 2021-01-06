@@ -24,7 +24,7 @@ function Schedule() {
         <img src="/images/flyers/event_2020_11_28.jpeg" alt="Up and coming event" className="schedule__up-coming" />
       );
     }
-    return <h4 className="schedule__no-up-coming">{t('schedule.noEvent')}</h4>;
+    return <h4 className="center-text schedule__no-up-coming">{t('schedule.noEvent')}</h4>;
   };
 
   return (

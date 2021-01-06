@@ -95,12 +95,12 @@ function Live() {
     <div className="live margin-bottom-footer">
       <Title text={t('live.title')} />
       {liveNow && (
-        <h3 className="live-subtitle">
+        <h3 className="center-text live-subtitle">
           <span className="flash">{currentLiveDj}</span>
           {` ${t('live.liveNow')}`}
         </h3>
       )}
-      {!liveNow && <h3 className="live-subtitle">{` ${t('live.notLiveNow')}`}</h3>}
+      {!liveNow && <h3 className="center-text live-subtitle">{` ${t('live.notLiveNow')}`}</h3>}
       <div className="live__video">
         <div className="live__video--player">
           <p className="live__video--player-refresh" onClick={reloadIframeWidget}>

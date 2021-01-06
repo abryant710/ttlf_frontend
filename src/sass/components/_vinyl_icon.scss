@@ -14,3 +14,16 @@
     animation: rotateZ360_reverse 4s infinite;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .vinyl_icon {
+    width: 5rem;
+    height: 5rem;
+  }
+  &-1 {
+    margin: 2rem 1rem 2rem 0;
+  }
+  &-2 {
+    margin: 2rem 0 2rem 1rem;
+  }
+}
