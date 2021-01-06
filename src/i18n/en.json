@@ -37,6 +37,7 @@
   "live": {
     "title": "Live Stream",
     "liveNow": "is live now!",
+    "notLiveNow": "We're not live right now",
     "buttonSmall": "Small",
     "buttonMedium": "Medium",
     "buttonLarge": "Large"

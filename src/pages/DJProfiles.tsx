@@ -18,7 +18,7 @@ function DJProfiles() {
   const {
     state: { djProfiles },
   } = useContext(ContentContext);
-  const residents = djProfiles.map((profile: DjBio) => profile.name);
+  const residents = djProfiles.map((profile: DjBio) => [profile.name, profile.nickname]);
   const imgNums = shuffle(Array.from(Array(10).keys())).slice(0, residents.length);
 
   const arrLength = residents.length;
@@ -36,24 +36,24 @@ function DJProfiles() {
     <div className="bios margin-bottom-footer">
       <Title text={t('djProfiles.title')} />
       <div className="bios__buttons">
-        {residents.map((resident: string, resIdx: number) => (
+        {residents.map((resident: string[], resIdx: number) => (
           <Button
-            key={`${resident}_button`}
+            key={`${resident[0]}_button`}
             className="bios__buttons--button"
             onClick={() => scrollToRef(djRefs[resIdx])}
-            text={resident}
+            text={resident[1] || resident[0]}
           />
         ))}
       </div>
-      {residents.map((resident: string, resIdx: number) => {
-        const { nickname, bio } = djProfiles.find((profile: DjBio) => profile.name === resident);
+      {residents.map((resident: string[], resIdx: number) => {
+        const { bio } = djProfiles.find((profile: DjBio) => profile.name === resident[0]);
         return (
-          <div className="bios__bio" key={resident} ref={djRefs[resIdx]}>
-            <h1 className="bios__bio--title">{resident}</h1>
-            {nickname && (
+          <div className="bios__bio" key={resident[0]} ref={djRefs[resIdx]}>
+            <h1 className="bios__bio--title">{resident[0]}</h1>
+            {resident[1] && (
               <h4 className="bios__bio--nickname">
                 A.K.A
-                <span className="bios__bio--nickname-dark">{` ${nickname}`}</span>
+                <span className="bios__bio--nickname-dark">{` ${resident[1]}`}</span>
               </h4>
             )}
             <Loader
