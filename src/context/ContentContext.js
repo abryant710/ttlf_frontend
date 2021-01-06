@@ -1,9 +1,17 @@
+import { shuffle } from 'lodash';
 import createDataContext from './createDataContext';
 
 const appReducer = (state, { type, payload }) => {
+  const { youTubeVideosRandomised, youTubeVideos, soundcloudTracks, soundcloudTracksRandomised } = payload;
   switch (type) {
     case 'LOAD_CONTENT_STATE':
-      return { ...state, ...payload, contentLoaded: true };
+      return {
+        ...state,
+        ...payload,
+        youTubeVideos: youTubeVideosRandomised ? shuffle(youTubeVideos) : youTubeVideos,
+        soundcloudTracks: soundcloudTracksRandomised ? shuffle(soundcloudTracks) : soundcloudTracks,
+        contentLoaded: true,
+      };
     default:
       return state;
   }

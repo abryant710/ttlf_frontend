@@ -9,7 +9,6 @@ import { RiSlideshow3Fill } from 'react-icons/ri';
 import { BiMinus } from 'react-icons/bi';
 import { useHistory } from 'react-router-dom';
 
-import { Context as ContentContext } from '../../context/ContentContext';
 import { Context as AppContext } from '../../context/AppContext';
 import SocialIcons from '../SocialIcons';
 import Player from '../Player';
@@ -23,9 +22,6 @@ function Header() {
     hideMenu,
     minimisePlayer,
   } = useContext(AppContext);
-  const {
-    state: { contentLoaded },
-  } = useContext(ContentContext);
 
   useEffect(() => {
     ReactTooltip.rebuild();
@@ -136,7 +132,7 @@ function Header() {
         </div>
         <div className="header__burger">{showBurgerOption(showMenu)}</div>
       </div>
-      {showPlayer && contentLoaded && <Player />}
+      {showPlayer && <Player />}
       <ReactTooltip disable={!!showMenu} />
     </header>
   );

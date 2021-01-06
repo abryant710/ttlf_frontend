@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { useTranslation } from 'react-i18next';
-import { shuffle } from 'lodash';
 
 import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
@@ -17,14 +16,13 @@ function Videos() {
     turnPlayerOff,
   } = useContext(AppContext);
   const {
-    state: { contentLoaded, youTubeVideoPrefix, youTubeVideos, youTubeVideosRandomised },
+    state: { contentLoaded, youTubeVideoPrefix, youTubeVideos },
   } = useContext(ContentContext);
-  const videos = youTubeVideosRandomised ? shuffle(youTubeVideos) : youTubeVideos;
 
   const [videoPlaying, changeVideoPlaying] = useState(-1);
   const loadStates: { [key: string]: boolean } = {};
 
-  videos.forEach((_video: Media, idx: number) => {
+  youTubeVideos.forEach((_video: Media, idx: number) => {
     loadStates[`video_${idx}`] = false;
     return null;
   });
@@ -35,7 +33,7 @@ function Videos() {
     <div className="videos margin-bottom-footer">
       <Title text={t('videos.title')} />
       {contentLoaded &&
-        videos.map((video: Media, idx: number) => {
+        youTubeVideos.map((video: Media, idx: number) => {
           const { title, url } = video;
           return (
             <div className="videos__video" key={title}>
