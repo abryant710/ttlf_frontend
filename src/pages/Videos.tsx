@@ -6,13 +6,9 @@ import { shuffle } from 'lodash';
 import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
 
+import { Media } from '../types';
 import Title from '../components/Title';
 import Loader from '../components/Loader';
-
-interface YouTubeVideo {
-  url: string;
-  title: string;
-}
 
 function Videos() {
   const { t } = useTranslation('common');
@@ -28,7 +24,7 @@ function Videos() {
   const [videoPlaying, changeVideoPlaying] = useState(-1);
   const loadStates: { [key: string]: boolean } = {};
 
-  videos.forEach((_video: YouTubeVideo, idx: number) => {
+  videos.forEach((_video: Media, idx: number) => {
     loadStates[`video_${idx}`] = false;
     return null;
   });
@@ -39,7 +35,7 @@ function Videos() {
     <div className="videos margin-bottom-footer">
       <Title text={t('videos.title')} />
       {contentLoaded &&
-        videos.map((video: YouTubeVideo, idx: number) => {
+        videos.map((video: Media, idx: number) => {
           const { title, url } = video;
           return (
             <div className="videos__video" key={title}>

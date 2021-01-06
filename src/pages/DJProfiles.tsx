@@ -8,6 +8,7 @@ import Button from '../components/Button';
 import djProfiles, { residents } from '../config/djProfiles';
 import { getImage, numberUpToMax } from '../utils/utils';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop - 100, behavior: 'smooth' });
 
 function DJProfiles() {

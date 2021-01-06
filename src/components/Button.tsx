@@ -3,7 +3,7 @@ import React from 'react';
 type ButtonProps = {
   text: string;
   className: string;
-  onClick?: any;
+  onClick?: React.MouseEventHandler<HTMLParagraphElement>;
 };
 
 const Button = ({ text, onClick = () => null, className }: ButtonProps) => {
