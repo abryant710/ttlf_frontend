@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import Picture from '../Picture';
 
 import { Context as AppContext } from '../../context/AppContext';
 
@@ -78,16 +79,18 @@ function SiteMenu() {
         const { name, route } = page;
         return (
           <div className="site_menu__button" key={`menu_option_${name}`} onClick={() => handleClick(route)}>
-            <img
+            <Picture
               className={`vinyl_icon vinyl_icon-1 vinyl_icon--${idx % 2 === 0 ? 'fast' : 'slow'}`}
-              src="/images/transparent/ttlf-vinyl-record.png"
+              imageUrl="/images/transparent/ttlf-vinyl-record.png"
               alt="vinyl"
+              small
             />
             <h2 className={hasAnimation ? `bounceIn${idx + 1}` : ''}>{name}</h2>
-            <img
+            <Picture
               className={`vinyl_icon vinyl_icon-2 vinyl_icon--${idx % 2 === 0 ? 'fast' : 'slow'}`}
-              src="/images/transparent/ttlf-vinyl-record.png"
+              imageUrl="/images/transparent/ttlf-vinyl-record.png"
               alt="vinyl"
+              small
             />
           </div>
         );

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,17 +7,20 @@ import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
 
 import Loader from '../components/Loader';
-import CustomToast from '../components/CustomToast';
+
+const Toast = lazy(() => import('../components/CustomToast'));
 
 const showEventToast = (t: (trans: string) => string) => {
   toast.info(
-    <CustomToast
-      headerText={t('home.events.message')}
-      link={{
-        route: '/schedule',
-        text: t('home.events.linkText'),
-      }}
-    />,
+    <Suspense fallback={<div />}>
+      <Toast
+        headerText={t('home.events.message')}
+        link={{
+          route: '/schedule',
+          text: t('home.events.linkText'),
+        }}
+      />
+    </Suspense>,
   );
 };
 

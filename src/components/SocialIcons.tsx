@@ -15,6 +15,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
   return (
     <div className={className}>
       <a
+        aria-label="Soundcloud"
         target="_blank"
         className="center-items hover-rotate"
         rel="noopener noreferrer"
@@ -24,6 +25,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         <FaSoundcloud color={color} size={size} />
       </a>
       <a
+        aria-label="YouTube"
         target="_blank"
         className="center-items hover-rotate"
         rel="noopener noreferrer"
@@ -33,6 +35,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         <FaYoutube color={color} size={size} />
       </a>
       <a
+        aria-label="Facebook"
         target="_blank"
         className="center-items hover-rotate"
         rel="noopener noreferrer"
@@ -42,6 +45,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         <FaFacebook color={color} size={size} />
       </a>
       <a
+        aria-label="Twitch"
         target="_blank"
         className="center-items hover-rotate"
         rel="noopener noreferrer"

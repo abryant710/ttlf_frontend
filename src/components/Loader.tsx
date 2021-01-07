@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImSpinner2 } from 'react-icons/im';
+import Picture from './Picture';
 
 type LoaderProps = {
   isOverlay?: boolean;
@@ -9,15 +10,18 @@ type LoaderProps = {
   message?: string;
 };
 
-const Loader = ({ imageUrl, message, withClasses, isOverlay, showSpinner }: LoaderProps) => {
+const getPicture = (showSpinner: boolean | undefined, withClasses: string[], imageUrl: string) => {
+  if (showSpinner) {
+    return <ImSpinner2 size="30px" color="black" className={`${withClasses ? withClasses.join(' ') : ''}`} />;
+  }
+  return <Picture small imageUrl={imageUrl} className={`${withClasses ? withClasses.join(' ') : ''}`} />;
+};
+
+const Loader = ({ imageUrl = '', message, withClasses = [], isOverlay, showSpinner }: LoaderProps) => {
   return (
     <div className={isOverlay ? 'loader' : 'center-items-col'}>
       {message && <h2 className="loader__message">{message}</h2>}
-      {showSpinner ? (
-        <ImSpinner2 size="30px" color="black" className={`${withClasses ? withClasses.join(' ') : ''}`} />
-      ) : (
-        <img className={`${withClasses ? withClasses.join(' ') : ''}`} src={imageUrl} alt="TTFL" />
-      )}
+      {getPicture(showSpinner, withClasses, imageUrl)}
     </div>
   );
 };

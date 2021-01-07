@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
@@ -15,19 +15,22 @@ import Live from './pages/Live';
 import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import SiteMenu from './components/menus/SiteMenu';
-import BackToTop from './components/BackToTop';
-import CustomToast from './components/CustomToast';
 import './sass/main.sass';
+
+const Toast = lazy(() => import('./components/CustomToast'));
+const ToTop = lazy(() => import('./components/BackToTop'));
 
 const showErrorToast = (t: (trans: string) => string) => {
   toast.error(
-    <CustomToast
-      headerText={t('home.loadError.message')}
-      link={{
-        route: '/',
-        text: t('home.loadError.linkText'),
-      }}
-    />,
+    <Suspense fallback={<div />}>
+      <Toast
+        headerText={t('home.loadError.message')}
+        link={{
+          route: '/',
+          text: t('home.loadError.linkText'),
+        }}
+      />
+    </Suspense>,
   );
 };
 
@@ -61,7 +64,9 @@ function App() {
         <Redirect to="/" />
       </Switch>
       <Footer />
-      <BackToTop />
+      <Suspense fallback={<div />}>
+        <ToTop />
+      </Suspense>
       <ToastContainer autoClose={10000} hideProgressBar draggable={false} transition={Zoom} />
     </Router>
   );
