@@ -65,6 +65,8 @@
 
 @media only screen and (max-width: $live-video-width) {
   .live {
+    // Temp fix while using Twitch chat widget
+    min-height: calc(#{$min-page-height} + 720px) !important;
     &__video {
       width: calc(0.5 * #{$live-video-width});
       height: calc(0.5 * #{$live-video-height});
