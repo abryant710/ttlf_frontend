@@ -7,7 +7,7 @@
   bottom: 40px;
   align-items: center;
   height: 60px;
-  color: $color-white;
+  color: $color-primary-dark;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
@@ -17,7 +17,7 @@
   text-align: center;
   &__text {
     width: 100%;
-    color: $color-white;
+    color: $color-primary-dark;
     font-size: 16px;
   }
   &__icon {
@@ -26,11 +26,5 @@
   }
   &:hover{
     transform: scale(1.1s);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .back-to-top {
-    
   }
 }

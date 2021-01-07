@@ -1,5 +1,4 @@
 .live {
-  min-height: $min-page-height;
   min-width: 100vw;
   background-color: $color-white;
   display: flex;
@@ -74,7 +73,7 @@
       }
       &--player {
         &-content {
-          padding-bottom: calc(#{$footer-height} + 20px);
+          padding-bottom: $footer-height;
         }
         &-chat {
           min-height: 400px;

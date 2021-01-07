@@ -92,7 +92,7 @@ function Live() {
   const vidClsStr = 'live__video--player-size-selected';
 
   return (
-    <div className="live margin-bottom-footer">
+    <div className={`live min-height-${2 * +getWidthOrHeight('height')}`}>
       <Title text={t('live.title')} />
       {liveNow && (
         <div className="center-text">

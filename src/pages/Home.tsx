@@ -54,7 +54,7 @@ function Home() {
   }, [backButtonShown, hideBackButton]);
 
   return (
-    <div className="home margin-bottom-footer">
+    <div className="home page-min-height">
       <Loader withClasses={['loadingAnimation', 'bounceDown']} imageUrl="images/transparent/ttlf_0013.png" isOverlay />
     </div>
   );

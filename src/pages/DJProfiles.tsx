@@ -33,7 +33,7 @@ function DJProfiles() {
   }, [arrLength]);
 
   return (
-    <div className="bios margin-bottom-footer">
+    <div className="bios page-min-height">
       <Title text={t('djProfiles.title')} />
       <div className="bios__buttons">
         {residents.map((resident: string[], resIdx: number) => (

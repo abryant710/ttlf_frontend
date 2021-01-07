@@ -23,7 +23,7 @@ function Videos() {
   const [videoPlaying, changeVideoPlaying] = useState(-1);
 
   return (
-    <div className="videos margin-bottom-footer">
+    <div className="videos page-min-height">
       <Title text={t('videos.title')} />
       {contentLoaded &&
         youTubeVideos.map((video: Media, idx: number) => {

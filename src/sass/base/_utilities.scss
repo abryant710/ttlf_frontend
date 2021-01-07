@@ -4,6 +4,22 @@
   align-items: center;
 }
 
+.page-min-height {
+  min-height: $min-page-height;
+}
+
+.min-height-1440 {
+  min-height: calc(#{$min-page-height} + 1440px);
+}
+
+.min-height-720 {
+  min-height: calc(#{$min-page-height} + 720px);
+}
+
+.min-height-360 {
+  min-height: calc(#{$min-page-height} + 360px);
+}
+
 .center-text {
   text-align: center;
 }
@@ -69,10 +85,6 @@
 
 .pointer {
   cursor: pointer;
-}
-
-.margin-bottom-footer {
-  margin-bottom: $footer-height;
 }
 
 .margin-top-medium {

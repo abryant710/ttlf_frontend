@@ -28,7 +28,7 @@ function Schedule() {
   };
 
   return (
-    <div className="schedule margin-bottom-footer">
+    <div className="schedule page-min-height">
       <Title text={t('schedule.title')} />
       <div className="schedule__buttons">
         <Button
