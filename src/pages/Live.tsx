@@ -95,16 +95,16 @@ function Live() {
     <div className={`live min-height-${2 * +getWidthOrHeight('height')}`}>
       <Title text={t('live.title')} />
       {liveNow && (
-        <div className="center-text w-100">
-          <p className="live-subtitle">
+        <div className="live-subtitle center-text w-100">
+          <p>
             <span className="flash">{currentLiveDj}</span>
             {` ${t('live.liveNow')}`}
           </p>
         </div>
       )}
       {!liveNow && (
-        <div className="center-text w-100">
-          <p className="live-subtitle">{` ${t('live.notLiveNow')}`}</p>
+        <div className="live-subtitle center-text w-100">
+          <p>{` ${t('live.notLiveNow')}`}</p>
         </div>
       )}
       <div className="live__video">
