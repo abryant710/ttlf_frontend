@@ -7,6 +7,7 @@ import Title from '../components/Title';
 import Button from '../components/Button';
 import schedule from '../config/schedule';
 import { convertDate, convertTime } from '../utils/utils';
+import flyer from '../config/flyer';
 
 function Schedule() {
   const { t } = useTranslation('common');
@@ -21,7 +22,7 @@ function Schedule() {
     if (event) {
       return (
         // TODO: use dynamic content here to add a flyer
-        <img src="/images/flyers/event_2020_11_28.jpeg" alt="Up and coming event" className="schedule__up-coming" />
+        <img src={flyer} alt="Up and coming event" className="schedule__up-coming" />
       );
     }
     return <h4 className="center-text schedule__no-up-coming">{t('schedule.noEvent')}</h4>;
