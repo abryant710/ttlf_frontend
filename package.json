@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
+    "core-js": "^3.8.2",
     "i18next": "^19.8.2",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
@@ -36,7 +39,9 @@
   },
   "browserslist": {
     "production": [
-      "since 2010"
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",

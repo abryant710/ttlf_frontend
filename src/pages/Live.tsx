@@ -95,7 +95,7 @@ function Live() {
     <div className={`live min-height-${2 * +getWidthOrHeight('height')}`}>
       <Title text={t('live.title')} />
       {liveNow && (
-        <div className="center-text">
+        <div className="center-text w-100">
           <p className="live-subtitle">
             <span className="flash">{currentLiveDj}</span>
             {` ${t('live.liveNow')}`}
@@ -103,7 +103,7 @@ function Live() {
         </div>
       )}
       {!liveNow && (
-        <div className="center-text">
+        <div className="center-text w-100">
           <p className="live-subtitle">{` ${t('live.notLiveNow')}`}</p>
         </div>
       )}
