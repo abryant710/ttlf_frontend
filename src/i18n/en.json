@@ -26,7 +26,8 @@
     "title": "Live schedule",
     "buttonUpComing": "Up Coming",
     "buttonAll": "All",
-    "noEvent": "No events to inform you of right now. Stay posted!"
+    "noEvent": "No events to inform you of right now. Stay posted!",
+    "noSets": "No sets are planned right now."
   },
   "videos": {
     "title": "Videos"
