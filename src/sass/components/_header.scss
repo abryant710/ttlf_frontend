@@ -43,6 +43,12 @@
   }
   &__watch-live {
     @include header-icon;
+    padding: 1.8rem 1.3rem 1.3rem;
+    &--icon {
+      width: 3rem;
+      height: auto;
+      text-transform: uppercase;
+    }
   }
   &__burger {
     @include header-icon;
