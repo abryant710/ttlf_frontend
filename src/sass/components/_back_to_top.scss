@@ -8,7 +8,7 @@
   align-items: center;
   height: 60px;
   background-color: $color-white;
-  color: $color-quaternary-dark;
+  color: $color-primary;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
@@ -20,7 +20,7 @@
   box-shadow: $subtle-shadow;
   &__text {
     width: 100%;
-    color: $color-quaternary-dark;
+    color: $color-primary;
     font-size: 16px;
   }
   &__icon {
