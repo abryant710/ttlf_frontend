@@ -10,7 +10,7 @@ import { Context as ContentContext } from './context/ContentContext';
 import Home from './pages/Home';
 import DJProfiles from './pages/DJProfiles';
 import Videos from './pages/Videos';
-import Schedule from './pages/Schedule';
+import LiveSchedule from './pages/LiveSchedule';
 import Live from './pages/Live';
 import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
@@ -58,7 +58,7 @@ function App() {
       <Switch>
         <Route path="/bios" exact component={DJProfiles} />
         <Route path="/videos" exact component={Videos} />
-        <Route path="/schedule" exact component={Schedule} />
+        <Route path="/schedule" exact component={LiveSchedule} />
         <Route path="/live" exact component={Live} />
         <Route path="/" exact component={Home} />
         <Redirect to="/" />

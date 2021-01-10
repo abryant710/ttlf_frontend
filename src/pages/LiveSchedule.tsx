@@ -5,14 +5,14 @@ import { Context as ContentContext } from '../context/ContentContext';
 
 import Title from '../components/Title';
 import Button from '../components/Button';
-import schedule from '../config/schedule';
 import { convertDate, convertTime } from '../utils/utils';
 import flyer from '../config/flyer';
+import { Schedule } from '../types';
 
-function Schedule() {
+function LiveSchedule() {
   const { t } = useTranslation('common');
   const {
-    state: { upcomingEvent },
+    state: { upcomingEvent, schedules },
   } = useContext(ContentContext);
 
   const defaultState = upcomingEvent ? 'upComing' : 'all';
@@ -54,7 +54,7 @@ function Schedule() {
             </tr>
           </thead>
           <tbody>
-            {schedule.map((event, idx) => {
+            {schedules.map((event: Schedule, idx: number) => {
               const { dj, date, time } = event;
               return (
                 <tr className={`schedule__table--row-${idx % 2 === 0 ? 'even' : 'odd'}`} key={`${dj}_${date}_${time}`}>
@@ -71,4 +71,4 @@ function Schedule() {
   );
 }
 
-export default Schedule;
+export default LiveSchedule;

@@ -33,6 +33,7 @@ export const { Context, Provider } = createDataContext(
     contentLoaded: false,
     currentLiveDj: '',
     djProfiles: [],
+    schedules: [],
     liveNow: false,
     soundcloudTrackPrefix: '',
     soundcloudTracks: [],

@@ -9,10 +9,17 @@ export interface DjBio {
   bio: string[];
 }
 
+export interface Schedule {
+  date: string;
+  time: string;
+  dj: string;
+}
+
 export interface SiteConfig {
   contentLoaded: boolean;
   currentLiveDj: string;
   djProfiles: DjBio;
+  schedules: Schedule;
   liveNow: boolean;
   soundcloudTrackPrefix: string;
   soundcloudTracks: Media[];
