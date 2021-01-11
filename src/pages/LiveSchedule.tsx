@@ -1,28 +1,35 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Context as ContentContext } from '../context/ContentContext';
 
+import { apiRoot } from '../api/adminApi';
 import Title from '../components/Title';
 import Button from '../components/Button';
 import { convertDate, convertTime } from '../utils/utils';
-import flyer from '../config/flyer';
 import { Schedule } from '../types';
 
 function LiveSchedule() {
   const { t } = useTranslation('common');
   const {
-    state: { upcomingEvent, schedules },
+    state: { upcomingEvent, eventFlyerLocation, schedules },
   } = useContext(ContentContext);
+  const [tabShown, changeTab] = useState('upComing');
 
-  const defaultState = upcomingEvent ? 'upComing' : 'all';
-  const [tabShown, changeTab] = useState(defaultState);
+  const eventDate = new Date(upcomingEvent);
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const eventExpired = eventDate < yesterday;
+
+  useEffect(() => {
+    const defaultState = !eventExpired ? 'upComing' : 'all';
+    changeTab(defaultState);
+  }, [upcomingEvent]);
 
   const getUpComingContent = (event: string) => {
-    if (event) {
+    if (!eventExpired) {
       return (
-        // TODO: use dynamic content here to add a flyer
-        <img src={flyer} alt="Up and coming event" className="schedule__up-coming" />
+        <img src={`${apiRoot()}${eventFlyerLocation}`} alt="Up and coming event" className="schedule__up-coming" />
       );
     }
     return <h4 className="center-text schedule__no-up-coming">{t('schedule.noEvent')}</h4>;
