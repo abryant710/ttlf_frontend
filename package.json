@@ -27,6 +27,7 @@
     "build:deploy": "npm-run-all build deploy",
     "build": "react-scripts build",
     "commit:build:deploy": "npm-run-all commit build deploy",
+    "commit": "git push; git checkout main; git merge dev; git push; git checkout dev",
     "clean:yarn": "rm -rf node_modules || true && rm yarn.lock || true && yarn cache clean && yarn install",
     "deploy": "aws s3 sync build/ s3://ttlf-website --profile developer",
     "eject": "react-scripts eject",
