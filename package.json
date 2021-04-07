@@ -31,7 +31,7 @@
     "clean:yarn": "rm -rf node_modules || true && rm yarn.lock || true && yarn cache clean && yarn install",
     "deploy": "aws s3 sync build/ s3://ttlf-website --profile developer",
     "eject": "react-scripts eject",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id E7KCKX2GK3ZSJ --paths '/*' --profile developer",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E7KCKX2GK3ZSJ --paths '/*' --profile abryant710",
     "lint": "eslint --fix . --ext .tsx,.ts ./src",
     "start": "react-scripts start",
     "test": "react-scripts test"
