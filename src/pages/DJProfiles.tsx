@@ -47,7 +47,6 @@ function DJProfiles() {
       </div>
       {residents.map((resident: string[], resIdx: number) => {
         const { bio, name } = djProfiles.find((profile: DjBio) => profile.name === resident[0]);
-        console.log(`${name.replace(/\s/ig, '_')}_Logo.png`);
         return (
           <div className="bios__bio" key={resident[0]} ref={djRefs[resIdx]}>
             <h1 className="bios__bio--title">{resident[0]}</h1>
