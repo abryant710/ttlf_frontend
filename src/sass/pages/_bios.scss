@@ -2,6 +2,11 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
+  &__pic {
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+  }
   &__buttons {
     width: 80%;
     @include flex-center;
@@ -21,9 +26,14 @@
   &__bio {
     width: 80%;
     margin-top: 4rem;
-    // &:last-of-type {
-    //   margin-bottom: $footer-height;
-    // }
+    & p:first-of-type {
+      margin-top: 2rem;
+      border-radius: 6px 6px 0 0;
+    }
+    & p:last-of-type {
+      margin-bottom: 2rem;
+      border-radius: 0 0 6px 6px;
+    }
     &--title {
       @include big-font;
     }
@@ -39,11 +49,9 @@
     &--paragraph {
       @include paragraph-font;
       width: 100%;
-      margin: 2rem 0;
       padding: 2rem;
       color: $color-white;
       text-align: left;
-      border-radius: 6px;
       &-1 {
         background-color: $color-primary-dark;
       }

@@ -46,7 +46,8 @@ function DJProfiles() {
         ))}
       </div>
       {residents.map((resident: string[], resIdx: number) => {
-        const { bio } = djProfiles.find((profile: DjBio) => profile.name === resident[0]);
+        const { bio, name } = djProfiles.find((profile: DjBio) => profile.name === resident[0]);
+        console.log(`${name.replace(/\s/ig, '_')}_Logo.png`);
         return (
           <div className="bios__bio" key={resident[0]} ref={djRefs[resIdx]}>
             <h1 className="bios__bio--title">{resident[0]}</h1>
@@ -57,8 +58,8 @@ function DJProfiles() {
               </h4>
             )}
             <Loader
-              withClasses={['bounceLeft', 'image-width-small']}
-              imageUrl={getImage({ num: imgNums[resIdx] })}
+              withClasses={['bios__pic']}
+              imageUrl={`/images/logos/${name.replace(/\s/ig, '_')}_Logo.png`}
               isOverlay={false}
               message=""
             />
