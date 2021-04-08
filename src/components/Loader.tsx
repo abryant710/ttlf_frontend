@@ -14,7 +14,7 @@ const getPicture = (showSpinner: boolean | undefined, withClasses: string[], ima
   if (showSpinner) {
     return <ImSpinner2 size="30px" color="black" className={`${withClasses ? withClasses.join(' ') : ''}`} />;
   }
-  return <Picture imageUrl={imageUrl} className={`${withClasses ? withClasses.join(' ') : ''}`} />;
+  return <Picture small imageUrl={imageUrl} className={`${withClasses ? withClasses.join(' ') : ''}`} />;
 };
 
 const Loader = ({ imageUrl = '', message, withClasses = [], isOverlay, showSpinner }: LoaderProps) => {
