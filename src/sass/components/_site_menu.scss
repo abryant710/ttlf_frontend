@@ -21,6 +21,13 @@
   &--closed {
     transform: translateY(0);
   }
+  &__chevron {
+    display: flex;
+    min-height: 4rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
   &__button {
     text-align: center;
     display: flex;

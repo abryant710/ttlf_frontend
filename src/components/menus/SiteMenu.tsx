@@ -67,13 +67,15 @@ function SiteMenu() {
   return (
     <div className={`site_menu site_menu--${showMenu ? 'open' : 'closed'}`}>
       {options.length > 3 && (
-        <BsChevronUp
-          onClick={() => {
-            setAnimation(false);
-            setTimeout(() => setAnimation(true), 100);
-            setLowestSelected(transitionMenu(lowestSelected, 'up', options.length));
-          }}
-        />
+        <div className="site_menu__chevron">
+          <BsChevronUp
+            onClick={() => {
+              setAnimation(false);
+              setTimeout(() => setAnimation(true), 100);
+              setLowestSelected(transitionMenu(lowestSelected, 'up', options.length));
+            }}
+          />
+        </div>
       )}
       {selectedMenuOptions.map((page, idx) => {
         const { name, route } = page;
@@ -96,13 +98,15 @@ function SiteMenu() {
         );
       })}
       {options.length > 3 && (
-        <BsChevronDown
-          onClick={() => {
-            setAnimation(false);
-            setTimeout(() => setAnimation(true), 100);
-            setLowestSelected(transitionMenu(lowestSelected, 'down', options.length));
-          }}
-        />
+        <div className="site_menu__chevron">
+          <BsChevronDown
+            onClick={() => {
+              setAnimation(false);
+              setTimeout(() => setAnimation(true), 100);
+              setLowestSelected(transitionMenu(lowestSelected, 'down', options.length));
+            }}
+          />
+        </div>
       )}
     </div>
   );
