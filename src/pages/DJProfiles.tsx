@@ -1,5 +1,4 @@
 import React, { useEffect, createRef, useContext } from 'react';
-import { shuffle } from 'lodash';
 import { useTranslation } from 'react-i18next';
 
 import { Context as ContentContext } from '../context/ContentContext';
@@ -8,7 +7,7 @@ import Title from '../components/Title';
 import Loader from '../components/Loader';
 import Button from '../components/Button';
 import { DjBio } from '../types';
-import { getImage, numberUpToMax } from '../utils/utils';
+import { numberUpToMax } from '../utils/utils';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop - 100, behavior: 'smooth' });
@@ -19,7 +18,6 @@ function DJProfiles() {
     state: { djProfiles },
   } = useContext(ContentContext);
   const residents = djProfiles.map((profile: DjBio) => [profile.name, profile.nickname]);
-  const imgNums = shuffle(Array.from(Array(10).keys())).slice(0, residents.length);
 
   const arrLength = residents.length;
   const [djRefs, setElRefs] = React.useState([]);
@@ -58,7 +56,7 @@ function DJProfiles() {
             )}
             <Loader
               withClasses={['bios__pic']}
-              imageUrl={`/images/logos/${name.replace(/\s/ig, '_')}_Logo.png`}
+              imageUrl={`/images/logos/${name.replace(/\s/gi, '_')}_Logo.png`}
               isOverlay={false}
               message=""
             />
