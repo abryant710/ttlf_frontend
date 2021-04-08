@@ -50,7 +50,7 @@ $background-image-width-smallest: ($background-image-width-small / 10) + px;
 // EL HEIGHTS AND WIDTHS
 $footer-height: 150px;
 $header-height: 100px;
-$header-height-offset: 50px;
+$header-height-offset: calc(.5 * #{$header-height});
 $site-menu-offset: calc(-100vh + #{$header-height-offset});
 $header-icon-padding: 13px;
 $min-page-height: calc(100vh - #{$footer-height});
