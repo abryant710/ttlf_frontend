@@ -1,4 +1,18 @@
 .home {
   min-width: 100vw;
   background-color: $color-white;
+  @include flex-center;
+  &-video {
+    transform: translateY(50px);
+    height: calc(100vh - 250px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    &-video {
+      transform: translateY(50px);
+      max-width: 100%;
+    }
+  }
 }

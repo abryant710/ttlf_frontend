@@ -41,7 +41,7 @@ function Home() {
       history.push('/live');
       turnPlayerOff(true);
     } else if (upcomingEvent) {
-      showEventToast(t);
+      // showEventToast(t);
     } else if (!showPlayer) {
       turnPlayerOff(false);
     }
@@ -55,7 +55,9 @@ function Home() {
 
   return (
     <div className="home page-min-height">
-      <Loader withClasses={['loadingAnimation', 'bounceDown']} imageUrl="images/transparent/ttlf_0013.png" isOverlay />
+      <video autoPlay muted loop className="home-video">
+        <source src="/videos/ttlf_video.mov" type="video/mp4" />
+      </video>
     </div>
   );
 }
