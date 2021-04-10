@@ -2,16 +2,15 @@
   min-width: 100vw;
   background-color: $color-white;
   @include flex-center;
-  &-video {
-    transform: translateY(50px);
-    height: calc(100vh - 250px);
+  &-img {
+    max-width: 50%;
+    margin-top: $footer-height / 2;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .home {
-    &-video {
-      transform: translateY(50px);
+    &-img {
       max-width: 100%;
     }
   }

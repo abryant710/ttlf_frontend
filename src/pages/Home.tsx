@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import useWindowWidths from '../hooks/useWindowWidths';
+
 import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
-
-import Loader from '../components/Loader';
 
 const Toast = lazy(() => import('../components/CustomToast'));
 
@@ -35,6 +35,10 @@ function Home() {
   const {
     state: { liveNow, upcomingEvent },
   } = useContext(ContentContext);
+  const {
+    width,
+    resolutions: [, mediumRes],
+  } = useWindowWidths();
 
   useEffect(() => {
     if (liveNow) {
@@ -55,9 +59,11 @@ function Home() {
 
   return (
     <div className="home page-min-height">
-      <video autoPlay muted loop className="home-video">
-        <source src="/videos/ttlf_video.mov" type="video/mp4" />
-      </video>
+      {width > mediumRes[0] ? (
+        <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
+      ) : (
+        <img src="/videos/ttlf_video_tall.gif" alt="TTLF" className="home-img" />
+      )}
     </div>
   );
 }
