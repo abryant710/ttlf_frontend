@@ -4,13 +4,17 @@ import { FaSoundcloud, FaYoutube, FaFacebook, FaTwitch } from 'react-icons/fa';
 
 import externalLinks from '../config/externalLinks';
 
+const soundcloudColor = '#ff5604';
+const youTubeColor = '#cc0000';
+const facebookColor = '#1195f5';
+const twitchColor = '#9147ff';
+
 type SocialIconsProps = {
   className: string;
   size: string;
-  color: string;
 };
 
-function SocialIcons({ className, size, color }: SocialIconsProps) {
+function SocialIcons({ className, size }: SocialIconsProps) {
   const { t } = useTranslation('common');
   return (
     <div className={className}>
@@ -22,7 +26,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         href={externalLinks.soundcloud}
         data-tip={t('externalLinks.soundcloud')}
       >
-        <FaSoundcloud color={color} size={size} />
+        <FaSoundcloud color={soundcloudColor} size={size} className="social" />
       </a>
       <a
         aria-label="YouTube"
@@ -32,7 +36,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         href={externalLinks.youtube}
         data-tip={t('externalLinks.youtube')}
       >
-        <FaYoutube color={color} size={size} />
+        <FaYoutube color={youTubeColor} size={size} className="social" />
       </a>
       <a
         aria-label="Facebook"
@@ -42,7 +46,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         href={externalLinks.facebook}
         data-tip={t('externalLinks.facebook')}
       >
-        <FaFacebook color={color} size={size} />
+        <FaFacebook color={facebookColor} size={size} className="social" />
       </a>
       <a
         aria-label="Twitch"
@@ -52,7 +56,7 @@ function SocialIcons({ className, size, color }: SocialIconsProps) {
         href={externalLinks.twitch}
         data-tip={t('externalLinks.twitch')}
       >
-        <FaTwitch color={color} size={size} />
+        <FaTwitch color={twitchColor} size={size} className="social" />
       </a>
     </div>
   );

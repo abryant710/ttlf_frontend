@@ -52,7 +52,7 @@ function Header() {
         </div>
       );
     }
-    return <SocialIcons className="header__icons" size="20px" color="white" />;
+    return <SocialIcons className="header__icons" size="20px" />;
   };
 
   const showBurgerOption = (showBurger: boolean) => {

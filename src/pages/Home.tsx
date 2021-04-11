@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import useWindowWidths from '../hooks/useWindowWidths';
-
 import { Context as ContentContext } from '../context/ContentContext';
 import { Context as AppContext } from '../context/AppContext';
 
@@ -35,17 +33,13 @@ function Home() {
   const {
     state: { liveNow, upcomingEvent },
   } = useContext(ContentContext);
-  const {
-    width,
-    resolutions: [, mediumRes],
-  } = useWindowWidths();
 
   useEffect(() => {
     if (liveNow) {
       history.push('/live');
       turnPlayerOff(true);
     } else if (upcomingEvent) {
-      // showEventToast(t);
+      showEventToast(t);
     } else if (!showPlayer) {
       turnPlayerOff(false);
     }
@@ -59,11 +53,7 @@ function Home() {
 
   return (
     <div className="home page-min-height">
-      {width > mediumRes[0] ? (
-        <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
-      ) : (
-        <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img scale-1-5" />
-      )}
+      <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
     </div>
   );
 }

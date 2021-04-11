@@ -52,3 +52,9 @@ a {
 iframe {
   box-shadow: $subtle-shadow;
 }
+
+svg.social {
+  border-radius: 5px;
+  background-color: white;
+  padding: 3px;
+}

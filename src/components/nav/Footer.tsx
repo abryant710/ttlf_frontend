@@ -15,7 +15,7 @@ function Footer() {
     <footer className={`footer ${strobe}`}>
       <div className="footer__anchor">
         <h3 className="footer__title">{t('home.title')}</h3>
-        <SocialIcons className="footer__icons" size="3rem" color="white" />
+        <SocialIcons className="footer__icons" size="3rem" />
         <p className="footer__attribution">
           &#169;
           {t('footer.attribution')}
