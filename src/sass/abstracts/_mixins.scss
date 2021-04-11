@@ -25,27 +25,27 @@
 
 @mixin small-font {
   font-size: 14px;
-  color: $color-quaternary;
+  color: $color-quaternary-light;
   font-weight: 700;
   cursor: pointer;
 }
 
 @mixin paragraph-font {
   font-size: 18px;
-  color: $color-black;
+  color: $color-white;
   font-weight: 300;
 }
 
 @mixin title-font {
   font-size: 6rem;
   text-align: center;
-  color: $color-primary-dark;
+  color: $color-white;
 }
 
 @mixin big-font {
   font-size: 4rem;
   text-align: center;
-  color: $color-primary-dark;
+  color: $color-primary-light;
 }
 
 @mixin header-icon {

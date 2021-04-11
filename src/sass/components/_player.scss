@@ -12,8 +12,7 @@
     border-radius: 10px;
     border: 1px solid $color-primary;
     position: relative;
-    box-shadow: 2px 2px 2px 2px $color-primary-light;
-    height: 70vh;
+    height: 71vh;
     text-align: center;
   }
   &__controls {
@@ -40,7 +39,7 @@
       margin: 0 1rem 0;
     }
     &__container {
-      width: 98%;
+      width: 100%;
       padding: 1rem;
     }
   }

@@ -2,6 +2,7 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
+  background-color: $color-black;
   &__pic {
     width: 100%;
     max-width: 40rem;
@@ -14,9 +15,10 @@
     text-align: center;
     flex-wrap: wrap;
     &--button {
+      border-radius: 5px;
       box-shadow: $subtle-shadow;
       @include paragraph-font;
-      color: $color-primary;
+      color: $color-primary-light;
       background: $color-white;
       margin: 2px;
       padding: 1rem;
@@ -53,16 +55,16 @@
       color: $color-white;
       text-align: left;
       &-1 {
-        background-color: $color-primary-dark;
+        background-color: $color-primary-light;
       }
       &-2 {
-        background-color: $color-secondary-dark;
+        background-color: $color-secondary-light;
       }
       &-3 {
-        background-color: $color-tertiary-dark;
+        background-color: $color-tertiary-light;
       }
       &-4 {
-        background-color: $color-quaternary-dark;
+        background-color: $color-quaternary-light;
       }
     }
   }

@@ -62,7 +62,7 @@ function Home() {
       {width > mediumRes[0] ? (
         <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
       ) : (
-        <img src="/videos/ttlf_video_tall.gif" alt="TTLF" className="home-img" />
+        <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img scale-1-5" />
       )}
     </div>
   );

@@ -2,6 +2,7 @@
   @include flex-center;
   flex-direction: column;
   text-align: center;
+  background-color: $color-black;
   &__buttons {
     @include flex-center;
     margin: 2rem;
@@ -34,6 +35,7 @@
     & thead tr th {
       @include big-font;
       color: $color-quaternary;
+      background-color: $color-white;
       &:hover {
         background-color: $color-quaternary;
         color: $color-white;
