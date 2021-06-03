@@ -36,10 +36,10 @@ function Home() {
 
   useEffect(() => {
     if (liveNow) {
-      history.push('/live');
-      turnPlayerOff(true);
+      // history.push('/live');
+      // turnPlayerOff(true);
     } else if (upcomingEvent) {
-      showEventToast(t);
+      // showEventToast(t);
     } else if (!showPlayer) {
       turnPlayerOff(false);
     }

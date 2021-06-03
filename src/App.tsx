@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import getSiteConfig from './api/adminApi';
+// import getSiteConfig from './api/adminApi';
+import staticJSON from './api/static.json';
 import { Context as ContentContext } from './context/ContentContext';
 
 import Home from './pages/Home';
@@ -40,10 +41,12 @@ function App() {
 
   useEffect(() => {
     const loadApp = async () => {
-      const res = await getSiteConfig();
-      const { status } = res;
+      // const res = await getSiteConfig();
+      // const { status } = res;
+      const { status } = staticJSON;
       if (status === 'success') {
-        loadFetchedContent(res);
+        // loadFetchedContent(res);
+        loadFetchedContent(staticJSON);
       } else {
         showErrorToast(t);
       }
