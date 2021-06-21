@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import staticJSON from './api/static.json';
 import { Context as ContentContext } from './context/ContentContext';
 
-import Loader from './components/Loader';
 import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import SiteMenu from './components/menus/SiteMenu';
@@ -64,9 +63,11 @@ function App() {
       <SiteMenu />
       <Switch>
         <Suspense
-          fallback={
-            <Loader showSpinner withClasses={['loadingAnimation', 'margin-top-medium', 'margin-bottom-medium']} />
-          }
+          fallback={(
+            <div className="home page-min-height">
+              <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
+            </div>
+          )}
         >
           <Route path="/bios" exact component={DJProfiles} />
           <Route path="/videos" exact component={Videos} />
