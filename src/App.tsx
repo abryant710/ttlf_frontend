@@ -13,6 +13,7 @@ import Header from './components/nav/Header';
 import Footer from './components/nav/Footer';
 import SiteMenu from './components/menus/SiteMenu';
 import './sass/main.sass';
+import Loader from './components/Loader';
 
 const Home = lazy(() => import('./pages/Home'));
 const DJProfiles = lazy(() => import('./pages/DJProfiles'));
@@ -65,7 +66,7 @@ function App() {
         <Suspense
           fallback={(
             <div className="home page-min-height">
-              <img src="/videos/ttlf_video_short.gif" alt="TTLF" className="home-img" />
+              <Loader showSpinner withClasses={['rotateZ360Infinite']} />
             </div>
           )}
         >

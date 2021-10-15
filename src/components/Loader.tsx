@@ -12,7 +12,7 @@ type LoaderProps = {
 
 const getPicture = (showSpinner: boolean | undefined, withClasses: string[], imageUrl: string) => {
   if (showSpinner) {
-    return <ImSpinner2 size="30px" color="black" className={`${withClasses ? withClasses.join(' ') : ''}`} />;
+    return <ImSpinner2 size="30px" color="white" className={`${withClasses ? withClasses.join(' ') : ''}`} />;
   }
   return <Picture small imageUrl={imageUrl} className={`${withClasses ? withClasses.join(' ') : ''}`} />;
 };
